@@ -1,0 +1,12 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Provinsi extends Model
+{
+    protected $table = 'provinsi';
+    public $incrementing = false;
+    protected $keyType = 'string';
+}
