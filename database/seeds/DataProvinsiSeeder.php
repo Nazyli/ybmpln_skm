@@ -6,7 +6,7 @@ use App\Kabupaten;
 use App\Kecamatan;
 use Illuminate\Support\Facades\DB;
 
-class DataKotaSeeder extends Seeder
+class DataProvinsiSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class DataKotaSeeder extends Seeder
      */
     public function run()
     {
-        //php artisan db:seed --class=DataKotaSeeder
+        //php artisan db:seed --class=DataProvinsiSeeder
         // DB::disableQueryLog();
         DB::transaction(function () {
             Provinsi::insert([
