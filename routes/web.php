@@ -18,3 +18,16 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('testblade');
 });
+Route::get('/dashboard', 'DashboardController@index');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', 'HomeController@index');
+});
+// Route::group(['middleware' => ['auth', 'checkRole:petugas']], function () {
+//     Route::get('/home', function () {
+//         return view('home');
+//     });
+// });
