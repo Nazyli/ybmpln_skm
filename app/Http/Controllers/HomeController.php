@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->role == 'admin') {
-            return view('home');
+            return view('dashboard');
 
         } else if (Auth::user()->role == 'petugas') {
             return view('testblade');
