@@ -22,6 +22,8 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index');
 });
-Route::get('/pendaftar', function () {
-    return view('dashboard.pendaftar');
-});
+Route::get('/pendaftar', 'PendaftarController@index');
+Route::get('/pendaftar', 'PendaftarController@provinsi');
+Route::get('/kabupaten/{id}','ProvinsiController@kabupaten');
+Route::get('/kecamatan/{id}','ProvinsiController@kecamatan');
+Route::get('/desa/{id}','ProvinsiController@desa');

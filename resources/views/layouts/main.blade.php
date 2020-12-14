@@ -10,9 +10,16 @@
   <link rel="icon" type="image/png" href="{{ url('img/logo/logo1.ico') }}">
   <title>YBM PLN SKM  &mdash; @yield('title')</title>
   <link href="{{ url('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url('vendor/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url('vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" >
   <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
+  @yield('css')
+  <style>
+    a:hover{
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -348,12 +355,10 @@
   <script src="{{ url('vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ url('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ url('vendor/select2/dist/js/select2.full.min.js') }}"></script>
   <script src="{{ url('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
   <script src="{{ url('js/ruang-admin.min.js') }}"></script>
-  
-  <script>
-    @yield('js')
-  </script>
+  @yield('js')
 
 
 </body>

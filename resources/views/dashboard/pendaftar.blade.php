@@ -1,4 +1,13 @@
 @extends('layouts.main')
+@section('css')
+    <style>
+        .fontSelect {
+            font-size: 10px;
+            text-transform:capitalize;
+        }
+
+    </style>
+@endsection
 @section('title', 'Studi Kelayakan Mitra/SKM')
 @section('breadcrumb', 'Home,Form,Studi Kelayakan Mitra')
 
@@ -11,6 +20,39 @@
                         <label for="inputnama3" class="col-sm-3 col-form-label">Nama</label>
                         <div class="col-sm-9">
                             <input type="nama" name="nama" class="form-control" id="inputnama3" placeholder="Nama Penerima">
+                        </div>
+                    </div>
+                    <p class="text-center">
+                        <a class="text-primary" data-toggle="collapse" href="#collapseExample" id="dataasal"
+                            onclick=dataAsal()>
+                            Tambah Data Alamat Sekarang lebih rinci
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="form-group row">
+                        <div class="col-sm-3">
+                            <select class="provinsi form-control fontSelect" style="width: 100%;" name="provinsi1">
+                                <option value="">Select</option>
+                                @foreach ($provinsi as $value)
+                                    <option value="{{ $value->id }}">{{ $value->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="kabupaten form-control fontSelect" style="width: 100%;" name="kabupaten1">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="kecamatan form-control fontSelect" style="width: 100%;" name="kecamatan1">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="kecamatan form-control fontSelect" style="width: 100%;" name="desa1">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -38,29 +80,30 @@
         <div class="col-lg-6">
             <div class="card mb-4">
                 <div class="card-body">
-                  <div class="form-group row">
-                    <label for="inputprogram3" class="col-sm-3 col-form-label">Program</label>
-                    <div class="col-sm-9">
-                        <input type="program" name="program" class="form-control" id="inputprogram3" placeholder="Program">
+                    <div class="form-group row">
+                        <label for="inputprogram3" class="col-sm-3 col-form-label">Program</label>
+                        <div class="col-sm-9">
+                            <input type="program" name="program" class="form-control" id="inputprogram3"
+                                placeholder="Program">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row" id="simple-date1">
-                  <label for="tanggalinput" class="col-sm-3 col-form-label">Tanggal Input</label>
-                  <div class="col-sm-9"> 
-                    <div class="input-group date">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                      </div>
-                      <input type="text" class="form-control" id="tanggalinput" name="tanggalinput">
+                    <div class="form-group row" id="simple-date1">
+                        <label for="tanggalinput" class="col-sm-3 col-form-label">Tanggal Input</label>
+                        <div class="col-sm-9">
+                            <div class="input-group date">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="tanggalinput" name="tanggalinput">
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="inputkm3" class="col-sm-3 col-form-label">KM</label>
-                  <div class="col-sm-9">
-                      <input type="km" name="km" class="form-control" id="inputkm3" placeholder="KM">
-                  </div>
-              </div>
+                    <div class="form-group row">
+                        <label for="inputkm3" class="col-sm-3 col-form-label">KM</label>
+                        <div class="col-sm-9">
+                            <input type="km" name="km" class="form-control" id="inputkm3" placeholder="KM">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -360,11 +403,95 @@
 @endsection
 
 @section('js')
-// Bootstrap Date Picker
-$('#simple-date1 .input-group.date').datepicker({
-  format: 'dd/mm/yyyy',
-  todayBtn: 'linked',
-  todayHighlight: true,
-  autoclose: true,        
-}).datepicker("setDate",'now');
+    <script>
+        $('.provinsi').select2({
+            placeholder: "Select Provinsi",
+            allowClear: true,
+            dropdownCssClass: "fontSelect",
+        });
+        $('.kabupaten').select2({
+            placeholder: "Select Kabupaten",
+            allowClear: true,
+            dropdownCssClass: "fontSelect",
+        });
+        $('.kecamatan').select2({
+            placeholder: "Select Kecamatan",
+            allowClear: true,
+            dropdownCssClass: "fontSelect",
+        });
+
+        $('#simple-date1 .input-group.date').datepicker({
+            format: 'dd/mm/yyyy',
+            todayBtn: 'linked',
+            todayHighlight: true,
+            autoclose: true,
+        }).datepicker("setDate", 'now');
+
+        function dataAsal() {
+            let x = document.getElementById("dataasal");
+            if (x.textContent == "Hapus Data") {
+                x.innerHTML = "Tambah Data Alamat Sekarang lebih rinci";
+            } else {
+                x.innerHTML = "Hapus Data";
+            }
+        }
+        $(document).ready(function() {
+            $('select[name="provinsi1"]').on('change', function() {
+                var id = $(this).val();
+                if(id) {
+                    $.ajax({
+                        url: 'kabupaten/'+id,
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            $('select[name="kabupaten1"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="kabupaten1"]').append('<option value="'+ value.id +'">'+ value.nama +'</option>');
+                            });    
+                        }
+                    });
+                }else{
+                    $('select[name="kabupaten1"]').empty();
+                }
+            });
+            $('select[name="kabupaten1"]').on('change', function() {
+                var id = $(this).val();
+                if(id) {
+                    $.ajax({
+                        url: 'kecamatan/'+id,
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            $('select[name="kecamatan1"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="kecamatan1"]').append('<option value="'+ value.id +'">'+ value.nama +'</option>');
+                            });    
+                        }
+                    });
+                }else{
+                    $('select[name="kecamatan1"]').empty();
+                }
+            });
+            $('select[name="kecamatan1"]').on('change', function() {
+                var id = $(this).val();
+                if(id) {
+                    $.ajax({
+                        url: 'desa/'+id,
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            $('select[name="desa1"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="desa1"]').append('<option value="'+ value.id +'">'+ value.nama +'</option>');
+                            });    
+                        }
+                    });
+                }else{
+                    $('select[name="desa1"]').empty();
+                }
+            });
+        });
+    </script>
+    // Bootstrap Date Picker
+    // Select2 Single with Placeholder
 @endsection
