@@ -23,8 +23,8 @@
                         </div>
                     </div>
                     <p class="text-center">
-                        <a class="text-primary" data-toggle="collapse" href="#collapseExample" id="dataasal"
-                            onclick=dataAsal()>
+                        <a class="text-primary" data-toggle="collapse" href="#collapseExample" id="dataSekarang"
+                            onclick=dataSekarang()>
                             Tambah Data Alamat Sekarang lebih rinci
                         </a>
                     </p>
@@ -49,7 +49,7 @@
                             </select>
                         </div>
                         <div class="col-sm-3">
-                            <select class="kecamatan form-control fontSelect" style="width: 100%;" name="desa1">
+                            <select class="desa form-control fontSelect" style="width: 100%;" name="desa1">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -60,6 +60,39 @@
                         <div class="col-sm-9">
                             <textarea name="alamatsekarang" class="form-control" id="inputalamatsekarang3"
                                 rows="3"></textarea>
+                        </div>
+                    </div>
+                    <p class="text-center">
+                        <a class="text-primary" data-toggle="collapse" href="#alamatasal" id="dataasal"
+                            onclick=dataAsal()>
+                            Tambah Data Alamat Asal lebih rinci
+                        </a>
+                    </p>
+                    <div class="collapse" id="alamatasal">
+                        <div class="form-group row">
+                        <div class="col-sm-3">
+                            <select class="provinsi form-control fontSelect" style="width: 100%;" name="provinsi2">
+                                <option value="">Select</option>
+                                @foreach ($provinsi as $value)
+                                    <option value="{{ $value->id }}">{{ $value->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="kabupaten form-control fontSelect" style="width: 100%;" name="kabupaten2">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="kecamatan form-control fontSelect" style="width: 100%;" name="kecamatan2">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="desa form-control fontSelect" style="width: 100%;" name="desa2">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -419,6 +452,11 @@
             allowClear: true,
             dropdownCssClass: "fontSelect",
         });
+        $('.desa').select2({
+            placeholder: "Select Desa",
+            allowClear: true,
+            dropdownCssClass: "fontSelect",
+        });
 
         $('#simple-date1 .input-group.date').datepicker({
             format: 'dd/mm/yyyy',
@@ -427,10 +465,18 @@
             autoclose: true,
         }).datepicker("setDate", 'now');
 
+        function dataSekarang() {
+            let x = document.getElementById("dataSekarang");
+            if (x.textContent == "Hapus Data") {
+                x.innerHTML = "Tambah Data Alamat Sekarang lebih rinci";
+            } else {
+                x.innerHTML = "Hapus Data";
+            }
+        }
         function dataAsal() {
             let x = document.getElementById("dataasal");
             if (x.textContent == "Hapus Data") {
-                x.innerHTML = "Tambah Data Alamat Sekarang lebih rinci";
+                x.innerHTML = "Tambah Data Alamat Asal lebih rinci";
             } else {
                 x.innerHTML = "Hapus Data";
             }
@@ -488,6 +534,60 @@
                     });
                 }else{
                     $('select[name="desa1"]').empty();
+                }
+            });
+            $('select[name="provinsi2"]').on('change', function() {
+                var id = $(this).val();
+                if(id) {
+                    $.ajax({
+                        url: 'kabupaten/'+id,
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            $('select[name="kabupaten2"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="kabupaten2"]').append('<option value="'+ value.id +'">'+ value.nama +'</option>');
+                            });    
+                        }
+                    });
+                }else{
+                    $('select[name="kabupaten2"]').empty();
+                }
+            });
+            $('select[name="kabupaten2"]').on('change', function() {
+                var id = $(this).val();
+                if(id) {
+                    $.ajax({
+                        url: 'kecamatan/'+id,
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            $('select[name="kecamatan2"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="kecamatan2"]').append('<option value="'+ value.id +'">'+ value.nama +'</option>');
+                            });    
+                        }
+                    });
+                }else{
+                    $('select[name="kecamatan2"]').empty();
+                }
+            });
+            $('select[name="kecamatan2"]').on('change', function() {
+                var id = $(this).val();
+                if(id) {
+                    $.ajax({
+                        url: 'desa/'+id,
+                        type: "GET",
+                        dataType: "json",
+                        success:function(data) {
+                            $('select[name="desa2"]').empty();
+                            $.each(data, function(key, value) {
+                                $('select[name="desa2"]').append('<option value="'+ value.id +'">'+ value.nama +'</option>');
+                            });    
+                        }
+                    });
+                }else{
+                    $('select[name="desa2"]').empty();
                 }
             });
         });
