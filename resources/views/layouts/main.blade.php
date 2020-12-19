@@ -13,6 +13,7 @@
   <link href="{{ url('vendor/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url('vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" >
+  <link href="{{ url('vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css') }}" rel="stylesheet" >
   <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
   @yield('css')
   <style>
@@ -357,6 +358,7 @@
   <script src="{{ url('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
   <script src="{{ url('vendor/select2/dist/js/select2.full.min.js') }}"></script>
   <script src="{{ url('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ url('vendor/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js') }}"></script>
   <script src="{{ url('js/ruang-admin.min.js') }}"></script>
   @yield('js')
 
