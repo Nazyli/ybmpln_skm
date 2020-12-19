@@ -13,7 +13,6 @@
         #breadcrumbAsal {
             margin-bottom: -10px;
         }
-
     </style>
 @endsection
 @section('title', 'Studi Kelayakan Mitra/SKM')
@@ -38,7 +37,7 @@
                     </p>
                     <div class="collapse" id="collapseExample">
                         <div class="form-group row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="provinsi form-control fontSelect" style="width: 100%;" name="provinsi1">
                                     <option value="">Select</option>
                                     @foreach ($provinsi as $value)
@@ -46,17 +45,17 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="kabupaten form-control fontSelect" style="width: 100%;" name="kabupaten1">
                                     <option value="">Select</option>
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="kecamatan form-control fontSelect" style="width: 100%;" name="kecamatan1">
                                     <option value="">Select</option>
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="desa form-control fontSelect" style="width: 100%;" name="desa1">
                                     <option value="">Select</option>
                                 </select>
@@ -81,7 +80,7 @@
                     </p>
                     <div class="collapse" id="alamatasal">
                         <div class="form-group row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="provinsi form-control fontSelect" style="width: 100%;" name="provinsi2">
                                     <option value="">Select</option>
                                     @foreach ($provinsi as $value)
@@ -89,17 +88,17 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="kabupaten form-control fontSelect" style="width: 100%;" name="kabupaten2">
                                     <option value="">Select</option>
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="kecamatan form-control fontSelect" style="width: 100%;" name="kecamatan2">
                                     <option value="">Select</option>
                                 </select>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-1">
                                 <select class="desa form-control fontSelect" style="width: 100%;" name="desa2">
                                     <option value="">Select</option>
                                 </select>
@@ -258,19 +257,23 @@
                             </legend>
                             <div class="col-sm-9">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="kepemilikanRumah1" name="kepemilikanRumah" class="custom-control-input">
+                                    <input type="radio" id="kepemilikanRumah1" name="kepemilikanRumah"
+                                        class="custom-control-input">
                                     <label class="custom-control-label" for="kepemilikanRumah1">Menumpang</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="kepemilikanRumah2" name="kepemilikanRumah" class="custom-control-input">
+                                    <input type="radio" id="kepemilikanRumah2" name="kepemilikanRumah"
+                                        class="custom-control-input">
                                     <label class="custom-control-label" for="kepemilikanRumah2">Kontrak</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="kepemilikanRumah3" name="kepemilikanRumah" class="custom-control-input">
+                                    <input type="radio" id="kepemilikanRumah3" name="kepemilikanRumah"
+                                        class="custom-control-input">
                                     <label class="custom-control-label" for="kepemilikanRumah3">Keluarga</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="kepemilikanRumah4" name="kepemilikanRumah" class="custom-control-input">
+                                    <input type="radio" id="kepemilikanRumah4" name="kepemilikanRumah"
+                                        class="custom-control-input">
                                     <label class="custom-control-label" for="kepemilikanRumah4">Sendiri</label>
                                 </div>
                             </div>
@@ -341,7 +344,9 @@
                                 </div>
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="kebun2" name="kebun" class="custom-control-input">
-                                    <label class="custom-control-label" for="kebun2">< 1000 m<sup>2</sup></label>
+                                    <label class="custom-control-label" for="kebun2">
+                                        < 1000 m<sup>2</sup>
+                                    </label>
                                 </div>
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="kebun3" name="kebun" class="custom-control-input">
@@ -409,24 +414,26 @@
                     <div class="form-group row">
                         <div class="col-sm-3">Ternak</div>
                         <div class="col-sm-9">
-                          <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="ternak1">
-                            <label class="custom-control-label" for="ternak1">Unggas 
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="ternak2">
-                            <label class="custom-control-label" for="ternak2">Unggas (.....ekor)</label>
-                          </div>
-                          <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="ternak3">
-                            <label class="custom-control-label" for="ternak3">Unggas (.....ekor)</label>
-                          </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">Unggas</div>
+                                <div class="col-sm-6">
+                                    <input name="unggas" type="text" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">Kambing/Domba</div>
+                                <div class="col-sm-6">
+                                    <input name="kambing" type="text" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">Sapi/Kerbau</div>
+                                <div class="col-sm-6">
+                                    <input name="sapi" type="text" class="form-control form-control-sm">
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      {{--  <div class="form-group">
-                        <input id="ternak" type="text" class="form-control">
-                      </div>  --}}
+                    </div>
                     <fieldset class="form-group">
                         <div class="row">
                             <legend class="col-form-label col-sm-3 pt-0">Simpanan
@@ -434,7 +441,15 @@
                             <div class="col-sm-9">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="simpanan1" name="simpanan" class="custom-control-input">
-                                    <label class="custom-control-label" for="simpanan1">Ada</label>
+                                    <label class="custom-control-label" for="simpanan1">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Rp</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-sm">
+                                        </div>
+                                    </label>
                                 </div>
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="simpanan2" name="simpanan" class="custom-control-input">
@@ -445,20 +460,103 @@
                     </fieldset>
                 </div>
             </div>
+
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Aset Produktif</h6>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="jenisAset">Sebutkan jenisnya : </label>
+                        <textarea class="form-control" id="jenisAset" rows="3"></textarea>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-3 pt-0">Penggunaan aset produktif
+                            </legend>
+                            <div class="col-sm-9">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="gunaAset1" name="gunaAset" class="custom-control-input">
+                                    <label class="custom-control-label" for="gunaAset1">Bertambahnya aset produktif</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="gunaAset2" name="gunaAset" class="custom-control-input">
+                                    <label class="custom-control-label" for="gunaAset2">Investasi usaha lain</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="gunaAset3" name="gunaAset" class="custom-control-input">
+                                    <label class="custom-control-label" for="gunaAset3">Investasi usaha turunan</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Profil Keluarga</h6>
+                    <button class="btn btn-primary btn-sm" id="addDataKeluarga">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="dataKeluarga"></div>
+                        <div class="col-lg-6 dataKeluarga" id="dataKeluarga-1">
+                            <div class="card mb-4">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Data Keluarga 1</h6>
+                                    <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-1');">
+                                        <i class="fas fa-xs fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
 
 @section('js')
     <script>
-        $('#ternak').TouchSpin({
+        $('input[name="unggas"]').TouchSpin({
             min: 0,
             max: 100,
             initval: 0,
             boostat: 5,
             maxboostedstep: 10,
             verticalbuttons: true,
-          });
+            verticalupclass: 'glyphicon glyphicon-plus',
+            verticaldownclass: 'glyphicon glyphicon-minus'
+        });
+        $('input[name="kambing"]').TouchSpin({
+            min: 0,
+            max: 100,
+            initval: 0,
+            boostat: 5,
+            maxboostedstep: 10,
+            verticalbuttons: true,
+            verticalupclass: 'glyphicon glyphicon-plus',
+            verticaldownclass: 'glyphicon glyphicon-minus'
+        });
+        $('input[name="sapi"]').TouchSpin({
+            min: 0,
+            max: 100,
+            initval: 0,
+            boostat: 5,
+            maxboostedstep: 10,
+            verticalbuttons: true,
+            verticalupclass: 'glyphicon glyphicon-plus',
+            verticaldownclass: 'glyphicon glyphicon-minus'
+        });
         $('.provinsi').select2({
             placeholder: "Select Provinsi",
             allowClear: true,
@@ -551,6 +649,30 @@
                 $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + d.options[d.selectedIndex].text + '</li>');
             }
         }
+        var fileId = 1;
+        function removeElement(elementId) {
+            // Removes an element from the document
+            var element = document.getElementById(elementId);
+            element.parentNode.removeChild(element);
+        }
+        $(document).ready(function(){
+            $("button#addDataKeluarga").on("click",function(){
+            fileId++;
+            let formKeluarga = `<div class="col-lg-6 dataKeluarga" id="dataKeluarga-`+fileId+`">
+                <div class="card mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga `+fileId+`</h6>
+                        <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-`+fileId+`'); return false;">
+                            <i class="fas fa-xs fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>`;
+            $(".dataKeluarga:last").after(formKeluarga);
+                })
+            })
         $(document).ready(function() {
             $('select[name="provinsi1"]').on('change', function() {
                 var id = $(this).val();
@@ -685,6 +807,4 @@
         });
 
     </script>
-    // Bootstrap Date Picker
-    // Select2 Single with Placeholder
 @endsection
