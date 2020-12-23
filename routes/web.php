@@ -20,7 +20,7 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index');
-    Route::get('/pendaftar', 'PendaftarController@index');
+    Route::resource('/pendaftar', 'PendaftarController');
     Route::get('/pendaftar', 'PendaftarController@provinsi');
 });
 Route::get('/kabupaten/{id}', 'ProvinsiController@kabupaten');
