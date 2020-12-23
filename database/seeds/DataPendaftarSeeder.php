@@ -86,7 +86,7 @@ class DataPendaftarSeeder extends Seeder
                     "pendaftar_id" => $id,
                     "nama" => $namaPendaftar,
                     "umur" => $faker->numberBetween(30, 40),
-                    "hubungan" => $isMale ? "Suami" : "Istri",
+                    "hubungan" => $isMale ? "Kepala Keluarga" : "Istri",
                     "status" => "Kawin",
                     "pekerjaan_utama" => $faker->randomElement(['PNS', 'Swasta', 'Wiraswata', 'Petani', 'Buruh', 'Lain-Lain']),
                     "pekerjaan_sampingan" => $faker->randomElement(["Admin Olshop", "Jasa Laundry", "Menjual Kue", "Freelance", NULL]),
