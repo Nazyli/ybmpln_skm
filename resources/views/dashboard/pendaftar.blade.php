@@ -13,6 +13,7 @@
         #breadcrumbAsal {
             margin-bottom: -10px;
         }
+
     </style>
 @endsection
 @section('title', 'Studi Kelayakan Mitra/SKM')
@@ -124,8 +125,7 @@
                     <div class="form-group row">
                         <label for="inputprogram3" class="col-sm-3 col-form-label">Program</label>
                         <div class="col-sm-9">
-                            <input type="program" name="program" class="form-control" id="inputprogram3"
-                                placeholder="Program">
+                            <input type="text" name="program" class="form-control" id="inputprogram3" placeholder="Program">
                         </div>
                     </div>
                     <div class="form-group row" id="simple-date1">
@@ -142,7 +142,7 @@
                     <div class="form-group row">
                         <label for="inputkm3" class="col-sm-3 col-form-label">KM</label>
                         <div class="col-sm-9">
-                            <input type="km" name="km" class="form-control" id="inputkm3" placeholder="KM">
+                            <input type="text" name="km" class="form-control" id="inputkm3" placeholder="KM">
                         </div>
                     </div>
                 </div>
@@ -417,19 +417,19 @@
                             <div class="form-group row">
                                 <div class="col-sm-6">Unggas</div>
                                 <div class="col-sm-6">
-                                    <input name="unggas" type="text" class="form-control form-control-sm">
+                                    <input name="unggas" type="number" class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">Kambing/Domba</div>
                                 <div class="col-sm-6">
-                                    <input name="kambing" type="text" class="form-control form-control-sm">
+                                    <input name="kambing" type="number" class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">Sapi/Kerbau</div>
                                 <div class="col-sm-6">
-                                    <input name="sapi" type="text" class="form-control form-control-sm">
+                                    <input name="sapi" type="number" class="form-control form-control-sm">
                                 </div>
                             </div>
                         </div>
@@ -499,7 +499,7 @@
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Profil Keluarga</h6>
-                    <button class="btn btn-primary btn-sm" id="addDataKeluarga">
+                    <button class="btn btn-primary btn-sm" id="addDataKeluarga" data-trigger="hover" data-toggle="popover" data-content="Tambah Form Keluarga" data-placement="top">
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
@@ -515,6 +515,92 @@
                                     </button>
                                 </div>
                                 <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="inputkm3" class="col-sm-3 col-form-label">Nama</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="nama[]" class="form-control"
+                                                placeholder="Nama Keluarga">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputkm3" class="col-sm-3 col-form-label">Umur</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" name="umur[]" class="form-control" placeholder="Umur">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputkm3" class="col-sm-3 col-form-label">Hubungan</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="hubungan[]" class="form-control"
+                                                placeholder="Hubungan dalam keluarga">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputkm3" class="col-sm-3 col-form-label">Status</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-group">
+                                                <select class="status form-control" name="status[]">
+                                                    <option value="">Select</option>
+                                                    <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                                    <option value="Suami">Suami</option>
+                                                    <option value="Istri">Istri</option>
+                                                    <option value="Anak">Anak</option>
+                                                    <option value="Menantu">Menantu</option>
+                                                    <option value="Cucu">Cucu</option>
+                                                    <option value="Orang Tua">Orang Tua</option>
+                                                    <option value="Mertua">Mertua</option>
+                                                    <option value="Famili">Famili</option>
+                                                    <option value="Pembantu">Pembantu</option>
+                                                    <option value="Lainnya">Lainnya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="text-center" style="margin-top:-15px;">
+                                            Pekerjaan
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" placeholder="Pekerjaan Utama"
+                                                    name="pekerjaanUtama[]">
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" placeholder="Pekerjaan Sampingan"
+                                                    name="pekerjaanSampingan[]">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputkm3" class="col-sm-3 col-form-label">Pendidikan</label>
+                                        <div class="col-sm-9">
+                                            <div class="form-group">
+                                                <select class="pendidikan form-control" name="pendidikan[]">
+                                                    <option value="">Select</option>
+                                                    <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option>
+                                                    <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat
+                                                    </option>
+                                                    <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
+                                                    <option value="SLTP / Sederajat">SLTP / Sederajat</option>
+                                                    <option value="SLTA / Sederajat">SLTA / Sederajat</option>
+                                                    <option value="Diploma I">Diploma I / II</option>
+                                                    <option value="Akademi / Diploma III / S. Muda">Akademi / Diploma III /
+                                                        S. Muda</option>
+                                                    <option value="Diploma IV / Strata I">Diploma IV / Strata I</option>
+                                                    <option value="Strata II">Strata II</option>
+                                                    <option value="Strata III">Strata III</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Keterangan</label>
+                                        <div class="col-sm-9">
+                                            <textarea name="keterangan[]" class="form-control" rows="2"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -522,11 +608,20 @@
                 </div>
             </div>
         </div>
+        
     </div>
 @endsection
 
 @section('js')
     <script>
+        $('.status').select2({
+            placeholder: "Status Dalam Keluarga",
+            allowClear: true
+        });
+        $('.pendidikan').select2({
+            placeholder: "Pendidikan Terakhir",
+            allowClear: true
+        });
         $('input[name="unggas"]').TouchSpin({
             min: 0,
             max: 100,
@@ -621,14 +716,16 @@
             let d = document.getElementsByName("desa1")[0];
             $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + p.options[p.selectedIndex].text + '</li>');
             if (k.length >= 1) {
-                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + k.options[k.selectedIndex].text + '</li>');
+                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + k.options[k.selectedIndex].text +
+                    '</li>');
             }
             if (ke.length >= 1) {
                 $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + ke.options[ke.selectedIndex].text +
                     '</li>');
             }
             if (d.length >= 1) {
-                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + d.options[d.selectedIndex].text + '</li>');
+                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + d.options[d.selectedIndex].text +
+                    '</li>');
             }
         }
 
@@ -643,36 +740,132 @@
                 $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + k.options[k.selectedIndex].text + '</li>');
             }
             if (ke.length >= 1) {
-                $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + ke.options[ke.selectedIndex].text + '</li>');
+                $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + ke.options[ke.selectedIndex].text +
+                    '</li>');
             }
             if (d.length >= 1) {
                 $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + d.options[d.selectedIndex].text + '</li>');
             }
         }
         var fileId = 1;
+
         function removeElement(elementId) {
             // Removes an element from the document
             var element = document.getElementById(elementId);
             element.parentNode.removeChild(element);
         }
-        $(document).ready(function(){
-            $("button#addDataKeluarga").on("click",function(){
-            fileId++;
-            let formKeluarga = `<div class="col-lg-6 dataKeluarga" id="dataKeluarga-`+fileId+`">
-                <div class="card mb-4">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga `+fileId+`</h6>
-                        <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-`+fileId+`'); return false;">
-                            <i class="fas fa-xs fa-trash"></i>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                    </div>
-                </div>
-            </div>`;
-            $(".dataKeluarga:last").after(formKeluarga);
-                })
+        $(document).ready(function() {
+            $("button#addDataKeluarga").on("click", function() {
+                fileId++;
+                let formKeluarga = `<div class="col-lg-6 dataKeluarga" id="dataKeluarga-` + fileId + `">
+                                <div class="card mb-4">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga ` + fileId +
+                    `</h6>
+                                        <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-` +
+                    fileId + `'); return false;">
+                                            <i class="fas fa-xs fa-trash"></i>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label for="inputkm3" class="col-sm-3 col-form-label">Nama</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="nama[]" class="form-control"
+                                                    placeholder="Nama Keluarga">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputkm3" class="col-sm-3 col-form-label">Umur</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" name="umur[]" class="form-control" placeholder="Umur">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputkm3" class="col-sm-3 col-form-label">Hubungan</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="hubungan[]" class="form-control"
+                                                    placeholder="Hubungan dalam keluarga">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputkm3" class="col-sm-3 col-form-label">Status</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-group">
+                                                    <select class="status-` + fileId + ` form-control" name="status[]">
+                                                        <option value="">Select</option>
+                                                        <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                                        <option value="Suami">Suami</option>
+                                                        <option value="Istri">Istri</option>
+                                                        <option value="Anak">Anak</option>
+                                                        <option value="Menantu">Menantu</option>
+                                                        <option value="Cucu">Cucu</option>
+                                                        <option value="Orang Tua">Orang Tua</option>
+                                                        <option value="Mertua">Mertua</option>
+                                                        <option value="Famili">Famili</option>
+                                                        <option value="Pembantu">Pembantu</option>
+                                                        <option value="Lainnya">Lainnya</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p class="text-center" style="margin-top:-15px;">
+                                                Pekerjaan
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" placeholder="Pekerjaan Utama"
+                                                        name="pekerjaanUtama[]">
+    
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" placeholder="Pekerjaan Sampingan"
+                                                        name="pekerjaanSampingan[]">
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputkm3" class="col-sm-3 col-form-label">Pendidikan</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-group">
+                                                    <select class="pendidikan-` + fileId + ` form-control" name="pendidikan[]">
+                                                        <option value="">Select</option>
+                                                        <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option>
+                                                        <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat</option>
+                                                        <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
+                                                        <option value="SLTP / Sederajat">SLTP / Sederajat</option>
+                                                        <option value="SLTA / Sederajat">SLTA / Sederajat</option>
+                                                        <option value="Diploma I">Diploma I / II</option>
+                                                        <option value="Akademi / Diploma III / S. Muda">Akademi / Diploma III / S. Muda</option>
+                                                        <option value="Diploma IV / Strata I">Diploma IV / Strata I</option>
+                                                        <option value="Strata II">Strata II</option>
+                                                        <option value="Strata III">Strata III</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Keterangan</label>
+                                            <div class="col-sm-9">
+                                                <textarea name="keterangan[]" class="form-control" rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                $(".dataKeluarga:last").after(formKeluarga);
+                $('.status-'+fileId).select2({
+                    placeholder: "Status Dalam Keluarga",
+                    allowClear: true
+                });
+                $('.pendidikan-'+fileId).select2({
+                    placeholder: "Pendidikan Terakhir",
+                    allowClear: true
+                });
             })
+        })
         $(document).ready(function() {
             $('select[name="provinsi1"]').on('change', function() {
                 var id = $(this).val();
