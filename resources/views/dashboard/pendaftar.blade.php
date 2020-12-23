@@ -140,9 +140,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputkm3" class="col-sm-3 col-form-label">KM</label>
+                        <label class="col-sm-3 col-form-label">KM</label>
                         <div class="col-sm-9">
-                            <input type="text" name="km" class="form-control" id="inputkm3" placeholder="KM">
+                            <input type="text" name="km" class="form-control" placeholder="KM">
                         </div>
                     </div>
                 </div>
@@ -517,20 +517,20 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label for="inputkm3" class="col-sm-3 col-form-label">Nama</label>
+                                        <label class="col-sm-3 col-form-label">Nama</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="nama[]" class="form-control"
                                                 placeholder="Nama Keluarga">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputkm3" class="col-sm-3 col-form-label">Umur</label>
+                                        <label class="col-sm-3 col-form-label">Umur</label>
                                         <div class="col-sm-9">
                                             <input type="number" name="umur[]" class="form-control" placeholder="Umur">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputkm3" class="col-sm-3 col-form-label">hubungan</label>
+                                        <label class="col-sm-3 col-form-label">hubungan</label>
                                         <div class="col-sm-9">
                                             <div class="form-group">
                                                 <select class="hubungan form-control" name="hubungan[]">
@@ -551,7 +551,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputkm3" class="col-sm-3 col-form-label">Status</label>
+                                        <label class="col-sm-3 col-form-label">Status</label>
                                         <div class="col-sm-9">
                                             <div class="form-group">
                                                 <select class="status form-control" name="status[]">
@@ -580,7 +580,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputkm3" class="col-sm-3 col-form-label">Pendidikan</label>
+                                        <label class="col-sm-3 col-form-label">Pendidikan</label>
                                         <div class="col-sm-9">
                                             <div class="form-group">
                                                 <select class="pendidikan form-control" name="pendidikan[]">
@@ -627,7 +627,8 @@
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Data Pendapatan Keluarga</h6>
                                     <button class="btn btn-primary btn-sm" id="addPendapatanKeluarga" data-trigger="hover"
-                                        data-toggle="popover" data-content="Tambah Data Pendapatan Keluarga" data-placement="top">
+                                        data-toggle="popover" data-content="Tambah Data Pendapatan Keluarga"
+                                        data-placement="top">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
@@ -639,7 +640,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="penghasilanPokok" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="penghasilanPokok"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -650,7 +652,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="penghasilanSimpanan" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="penghasilanSimpanan"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -661,7 +664,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="penghasilanSuami" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="penghasilanSuami"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -672,7 +676,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="penghasilanAnak" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="penghasilanAnak"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -685,7 +690,8 @@
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Data Pengeluaran Rutin Keluarga</h6>
                                     <button class="btn btn-primary btn-sm" id="addPengeluaranKeluarga" data-trigger="hover"
-                                        data-toggle="popover" data-content="Tambah Data Pengeluaran Rutin Keluarga" data-placement="top">
+                                        data-toggle="popover" data-content="Tambah Data Pengeluaran Rutin Keluarga"
+                                        data-placement="top">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
@@ -697,7 +703,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="kebutuhanDapur" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="kebutuhanDapur"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -708,7 +715,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="pengeluaranPendidikan" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="pengeluaranPendidikan"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -719,7 +727,8 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="pengeluaranKesehatan" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="pengeluaranKesehatan"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -730,18 +739,21 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="pengeluaranTransportasi" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="pengeluaranTransportasi"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group row pengeluaran">
-                                        <label class="col-sm-6 col-form-label">Iuran Rutin (Listrik, Siskamling, PAM)</label>
+                                        <label class="col-sm-6 col-form-label">Iuran Rutin (Listrik, Siskamling,
+                                            PAM)</label>
                                         <div class="col-sm-6">
                                             <div class="input-group input-group-sm mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control" name="pengeluaranIuranRutin" placeholder="Rp/*hari/bulan">
+                                                <input type="number" class="form-control" name="pengeluaranIuranRutin"
+                                                    placeholder="Rp/*hari/bulan">
                                             </div>
                                         </div>
                                     </div>
@@ -754,6 +766,214 @@
             </div>
         </div>
 
+        <div class="col-lg-12">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Keterlibatan Dalam Program Lain</h6>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Apakah pernah melakukan peminjaman dana sebelumnya ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="isPinjam1" name="isPinjam" class="custom-control-input">
+                                        <label class="custom-control-label" for="isPinjam1">Ya</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="isPinjam2" name="isPinjam" class="custom-control-input">
+                                        <label class="custom-control-label" for="isPinjam2">Tidak</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Jika Ya, lembaga apa yang memberi pinjaman ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="namaLembaga1" name="namaLembaga"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="namaLembaga1">Bank</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="namaLembaga2" name="namaLembaga"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="namaLembaga2">Koperasi</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="namaLembaga3" name="namaLembaga"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="namaLembaga3">
+                                            <input type="text" class="form-control form-control-sm"
+                                                style="margin-top:-5px;">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Berapa besar anda meminjam pada lembaga tersebut ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rp</span>
+                                        </div>
+                                        <input type="number" class="form-control" name="besarPinjaman"
+                                            placeholder="Banyaknya Pinjaman">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Bagaimana cara anda mengembalikan dana yang dipinjam
+                            ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="caraPengembalian1" name="caraPengembalian"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="caraPengembalian1">Diangsur/Dicicil</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="caraPengembalian2" name="caraPengembalian"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="caraPengembalian2">Jatuh Tempo</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Berapa lama masa pinjaman anda ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <input type="number" class="form-control form-control-sm" name="lamaPinjam"
+                                        placeholder="Lama pinjam">
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="pinjamPer1" name="pinjamPer" class="custom-control-input">
+                                        <label class="custom-control-label" for="pinjamPer1">Minggu</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="pinjamPer2" name="pinjamPer" class="custom-control-input">
+                                        <label class="custom-control-label" for="pinjamPer2">Bulan</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="pinjamPer3" name="pinjamPer" class="custom-control-input">
+                                        <label class="custom-control-label" for="pinjamPer3">Tahun</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Berapa total dana yang harus anda kembalikan pada masa itu
+                            ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rp</span>
+                                        </div>
+                                        <input type="number" class="form-control" name="totalPinjam"
+                                            placeholder="Total Pinjaman">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Apakah pinjaman tersebut saat ini sudah Lunas ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="isLunas1" name="isLunas" class="custom-control-input">
+                                        <label class="custom-control-label" for="isLunas1">Sudah</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="isLunas2" name="isLunas" class="custom-control-input">
+                                        <label class="custom-control-label" for="isLunas2">Belum</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Apakah sebelumnya pernah terlibat program ekonomi/sosial
+                            ?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="terlibatProgram1" name="terlibatProgram"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="terlibatProgram1">Pernah</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="terlibatProgram2" name="terlibatProgram"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="terlibatProgram2">Belum</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Apakah pernah menjadi pengurus dalam sebuah
+                            kelompok/program?</label>
+                        <div class="col-sm-6">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" id="pernahPengurus1" name="pernahPengurus"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="pernahPengurus1">Pernah</label>
+                                    </div>
+                                </div>
+                                <div class="p-2 bd-highlight">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="pernahPengurus2" name="pernahPengurus"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="pernahPengurus2">Belum</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -907,109 +1127,110 @@
             $("button#addDataKeluarga").on("click", function() {
                 fileId++;
                 let formKeluarga = `<div class="col-lg-6 dataKeluarga" id="dataKeluarga-` + fileId + `">
-                                        <div class="card mb-4">
-                                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                <h6 class="m-0 font-weight-bold text-primary">Data Keluarga ` + fileId +
+                                            <div class="card mb-4">
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">Data Keluarga ` +
+                    fileId +
                     `</h6>
-                                                <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-` +
+                                                    <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-` +
                     fileId + `'); return false;">
-                                                    <i class="fas fa-xs fa-trash"></i>
-                                                </button>
+                                                        <i class="fas fa-xs fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Nama</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" name="nama[]" class="form-control"
+                                                                placeholder="Nama Keluarga">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Umur</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" name="umur[]" class="form-control" placeholder="Umur">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Hubungan</label>
+                                                        <div class="col-sm-9">
+                                                            <div class="form-group">
+                                                                <select class="hubungan-` + fileId + ` form-control" name="hubungan[]">
+                                                                    <option value="">Select</option>
+                                                                    <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                                                    <option value="Suami">Suami</option>
+                                                                    <option value="Istri">Istri</option>
+                                                                    <option value="Anak">Anak</option>
+                                                                    <option value="Menantu">Menantu</option>
+                                                                    <option value="Cucu">Cucu</option>
+                                                                    <option value="Orang Tua">Orang Tua</option>
+                                                                    <option value="Mertua">Mertua</option>
+                                                                    <option value="Famili">Famili</option>
+                                                                    <option value="Pembantu">Pembantu</option>
+                                                                    <option value="Lainnya">Lainnya</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Status</label>
+                                                        <div class="col-sm-9">
+                                                            <div class="form-group">
+                                                                <select class="status-` + fileId + ` form-control" name="status[]">
+                                                                    <option value="">Select</option>
+                                                                    <option value="Kawin">Kawin</option>
+                                                                    <option value="Belum Kawin">Belum Kawin</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <p class="text-center" style="margin-top:-15px;">
+                                                            Pekerjaan
+                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control" placeholder="Pekerjaan Utama"
+                                                                    name="pekerjaanUtama[]">
+                
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control" placeholder="Pekerjaan Sampingan"
+                                                                    name="pekerjaanSampingan[]">
+                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Pendidikan</label>
+                                                        <div class="col-sm-9">
+                                                            <div class="form-group">
+                                                                <select class="pendidikan-` + fileId + ` form-control" name="pendidikan[]">
+                                                                    <option value="">Select</option>
+                                                                    <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option>
+                                                                    <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat
+                                                                    </option>
+                                                                    <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
+                                                                    <option value="SLTP / Sederajat">SLTP / Sederajat</option>
+                                                                    <option value="SLTA / Sederajat">SLTA / Sederajat</option>
+                                                                    <option value="Diploma I">Diploma I / II</option>
+                                                                    <option value="Akademi / Diploma III / S. Muda">Akademi / Diploma III / S. Muda</option>
+                                                                    <option value="Diploma IV / Strata I">Diploma IV / Strata I</option>
+                                                                    <option value="Strata II">Strata II</option>
+                                                                    <option value="Strata III">Strata III</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Keterangan</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea name="keterangan[]" class="form-control" rows="2"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="card-body">
-                                                <div class="form-group row">
-                                                    <label for="inputkm3" class="col-sm-3 col-form-label">Nama</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" name="nama[]" class="form-control"
-                                                            placeholder="Nama Keluarga">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="inputkm3" class="col-sm-3 col-form-label">Umur</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="number" name="umur[]" class="form-control" placeholder="Umur">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="inputkm3" class="col-sm-3 col-form-label">Hubungan</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="form-group">
-                                                            <select class="hubungan-` + fileId + ` form-control" name="hubungan[]">
-                                                                <option value="">Select</option>
-                                                                <option value="Kepala Keluarga">Kepala Keluarga</option>
-                                                                <option value="Suami">Suami</option>
-                                                                <option value="Istri">Istri</option>
-                                                                <option value="Anak">Anak</option>
-                                                                <option value="Menantu">Menantu</option>
-                                                                <option value="Cucu">Cucu</option>
-                                                                <option value="Orang Tua">Orang Tua</option>
-                                                                <option value="Mertua">Mertua</option>
-                                                                <option value="Famili">Famili</option>
-                                                                <option value="Pembantu">Pembantu</option>
-                                                                <option value="Lainnya">Lainnya</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="inputkm3" class="col-sm-3 col-form-label">Status</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="form-group">
-                                                            <select class="status-` + fileId + ` form-control" name="status[]">
-                                                                <option value="">Select</option>
-                                                                <option value="Kawin">Kawin</option>
-                                                                <option value="Belum Kawin">Belum Kawin</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p class="text-center" style="margin-top:-15px;">
-                                                        Pekerjaan
-                                                    </p>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <input type="text" class="form-control" placeholder="Pekerjaan Utama"
-                                                                name="pekerjaanUtama[]">
-            
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <input type="text" class="form-control" placeholder="Pekerjaan Sampingan"
-                                                                name="pekerjaanSampingan[]">
-            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="inputkm3" class="col-sm-3 col-form-label">Pendidikan</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="form-group">
-                                                            <select class="pendidikan-` + fileId + ` form-control" name="pendidikan[]">
-                                                                <option value="">Select</option>
-                                                                <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option>
-                                                                <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat
-                                                                </option>
-                                                                <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
-                                                                <option value="SLTP / Sederajat">SLTP / Sederajat</option>
-                                                                <option value="SLTA / Sederajat">SLTA / Sederajat</option>
-                                                                <option value="Diploma I">Diploma I / II</option>
-                                                                <option value="Akademi / Diploma III / S. Muda">Akademi / Diploma III / S. Muda</option>
-                                                                <option value="Diploma IV / Strata I">Diploma IV / Strata I</option>
-                                                                <option value="Strata II">Strata II</option>
-                                                                <option value="Strata III">Strata III</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 col-form-label">Keterangan</label>
-                                                    <div class="col-sm-9">
-                                                        <textarea name="keterangan[]" class="form-control" rows="2"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>`;
+                                        </div>`;
                 $(".dataKeluarga:last").after(formKeluarga);
                 $('.hubungan-' + fileId).select2({
                     placeholder: "Hubungan Dalam Keluarga",
@@ -1028,24 +1249,25 @@
         $(document).ready(function() {
             $("button#addPendapatanKeluarga").on("click", function() {
                 fileId++;
-                let formPenghaslan = `<div class="form-group row penghasilan" id="penghasilan-` + fileId + `">
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control form-control-sm" name="namaPenghasilan[]" placeholder="Nama Penghasilan Lain">
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Rp</span>
-                            </div>
-                            <input type="number" class="form-control" name="penghasillanBaru[]" placeholder="Rp/*hari/bulan">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('penghasilan-` + fileId + `'); return false;">
-                                <i class="fas fa-xs fa-trash"></i>
-                            </button>
+                let formPenghaslan = `<div class="form-group row penghasilan" id="penghasilan-` + fileId +
+                    `">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control form-control-sm" name="namaPenghasilan[]" placeholder="Nama Penghasilan Lain">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Rp</span>
+                                </div>
+                                <input type="number" class="form-control" name="penghasillanBaru[]" placeholder="Rp/*hari/bulan">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('penghasilan-` + fileId + `'); return false;">
+                                    <i class="fas fa-xs fa-trash"></i>
+                                </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>`;
+                    </div>`;
                 $(".penghasilan:last").after(formPenghaslan);
 
             });
@@ -1053,24 +1275,25 @@
         $(document).ready(function() {
             $("button#addPengeluaranKeluarga").on("click", function() {
                 fileId++;
-                let formPengeluaran = `<div class="form-group row pengeluaran" id="pengeluaran-` + fileId + `">
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control form-control-sm" name="namaPenghasilan[]" placeholder="Nama Pengeluaran Lain">
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="input-group input-group-sm mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Rp</span>
-                            </div>
-                            <input type="number" class="form-control" name="pengeluaranLain[]" placeholder="Rp/*hari/bulan">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('pengeluaran-` + fileId + `'); return false;">
-                                <i class="fas fa-xs fa-trash"></i>
-                            </button>
+                let formPengeluaran = `<div class="form-group row pengeluaran" id="pengeluaran-` + fileId +
+                    `">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control form-control-sm" name="namaPenghasilan[]" placeholder="Nama Pengeluaran Lain">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Rp</span>
+                                </div>
+                                <input type="number" class="form-control" name="pengeluaranLain[]" placeholder="Rp/*hari/bulan">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-danger btn-sm" onclick="javascript:removeElement('pengeluaran-` + fileId + `'); return false;">
+                                    <i class="fas fa-xs fa-trash"></i>
+                                </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>`;
+                    </div>`;
                 $(".pengeluaran:last").after(formPengeluaran);
 
             });
