@@ -20,7 +20,7 @@
 @section('breadcrumb', 'Home,Form,Studi Kelayakan Mitra')
 
 @section('isi')
-    <form class="form cf" method="POST" action="{{ route('pendaftar.store') }}" enctype="multipart/form-data">
+    <form id="pendaftar" method="POST" action="{{ route('pendaftar.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-lg-6">
@@ -29,7 +29,7 @@
                         <div class="form-group row">
                             <label for="inputnama3" class="col-sm-3 col-form-label">Nama</label>
                             <div class="col-sm-9">
-                                <input type="nama" name="nama" class="form-control" id="inputnama3"
+                                <input type="text" name="nama" class="form-control" id="inputnama3"
                                     placeholder="Nama Penerima">
                             </div>
                         </div>
@@ -1596,6 +1596,27 @@
                 breadcrumbAsal();
             });
         });
-
+        $(document).ready(function () {
+            $('#pendaftar').validate({
+              rules: {
+                nama: {
+                  required: true
+                },
+                alamatsekarang: {
+                  required: true,
+                }
+              },
+              messages: {},
+              errorClass: "invalid-tooltip",
+              errorElement: 'div',
+              validClass: "valid-tooltip",
+              highlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-valid').addClass('is-invalid');
+              },
+              unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid').addClass('is-valid');
+              },
+            });
+          });
     </script>
 @endsection
