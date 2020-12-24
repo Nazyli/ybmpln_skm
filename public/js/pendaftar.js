@@ -346,7 +346,7 @@ $("button#addDataKeluarga").on("click", function () {
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Keterangan</label>
                                             <div class="col-sm-9">
-                                                <textarea name="keterangan[]" class="form-control" rows="2" id="keterangan-` + fileId + `"></textarea>
+                                                <textarea name="keteranganKeluarga[]" class="form-control" rows="2" id="keterangan-` + fileId + `"></textarea>
                                             </div>
                                         </div>
                                     </div>

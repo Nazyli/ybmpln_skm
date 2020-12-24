@@ -65,14 +65,14 @@ class DataPendaftarSeeder extends Seeder
                 }
                 PendaftarDetail::insert([
                     "pendaftar_id" => $id,
-                    "idx_ukuran_rumah" => $faker->randomElement(["Sangat kecil ( <4m<sup>2</sup>)", "Kecil (4 – 6 m<sup>2</sup>)", "Sedang (6 – 8 m<sup>2</sup>)", "Besar ( >8 m<sup>2</sup>)"]),
+                    "idx_ukuran_rumah" => $faker->randomElement(["Sangat kecil (< 4 m<sup>2</sup>)", "Kecil (4 - 6 m<sup>2</sup>)", "Sedang (6 - 8 m<sup>2</sup>)", "Besar (> 8 m<sup>2</sup>)"]),
                     "idx_dinding" => $faker->randomElement(["Bilik bambu/Kayu", "Semi", "Gypusm", "Tembok/Beton"]),
                     "idx_lantai" => $faker->randomElement(["Tanah", "Panggung", "Semen", "Keramik"]),
                     "idx_atap" => $faker->randomElement(["Kirai/Ijuk", "Genteng/Seng", "Asbes/Berglazur"]),
                     "idx_kpm_rumah" => $faker->randomElement(["Menumpang", "Kontrak", "Keluarga", "Sendiri"]),
                     "idx_dapur" => $faker->randomElement(["Tungku", "Kompor Minyak", "Kompor Gas/Listrik"]),
                     "idx_kursi" => $faker->randomElement(["Lesehan", "Balai Bambu", "Kayu", "Sofa"]),
-                    "aset_pribadi_sawah" => $faker->randomElement(["Tidak Ada", "< 1000 m<sup>2</sup>", "1000 – 5000 m<sup>2</sup>", "> 5000 m<sup>2</sup>"]),
+                    "aset_pribadi_sawah" => $faker->randomElement(["Tidak Ada", "< 1000 m<sup>2</sup>", "1000 - 5000 m<sup>2</sup>", "> 5000 m<sup>2</sup>"]),
                     "aset_pribadi_elektronik" => $faker->randomElement(["Radio", "Tape", "Televisi", "CD. Player", "Kulkas"]),
                     "aset_pribadi_kendaraan" => $faker->randomElement(["Tidak Ada", "Sepeda Kayuh", "Sepeda Motor", "Mobil"]),
                     "aset_pribadi_ternak" => $hewan,

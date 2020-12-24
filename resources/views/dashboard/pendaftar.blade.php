@@ -161,27 +161,23 @@
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="ukuranRumah1" name="ukuranRumah"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="ukuranRumah1">Sangat kecil ( < 4 m<sup>
-                                                2</sup>)</label>
+                                            class="custom-control-input" value="Sangat kecil (< 4 m<sup>2</sup>)">
+                                        <label class="custom-control-label" for="ukuranRumah1">Sangat kecil ( < 4 m<sup>2</sup>)</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="ukuranRumah2" name="ukuranRumah"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="ukuranRumah2">Kecil (4 – 6
-                                            m<sup>2</sup>)</label>
+                                            class="custom-control-input" value="Kecil (4 – 6 m<sup>2</sup>)">
+                                        <label class="custom-control-label" for="ukuranRumah2">Kecil (4 - 6 m<sup>2</sup>)</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="ukuranRumah3" name="ukuranRumah"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="ukuranRumah3">Sedang (6 – 8
-                                            m<sup>2</sup>)</label>
+                                            class="custom-control-input" value="Sedang (6 – 8 m<sup>2</sup>)">
+                                        <label class="custom-control-label" for="ukuranRumah3">Sedang (6 - 8 m<sup>2</sup>)</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="ukuranRumah4" name="ukuranRumah"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="ukuranRumah4">Besar ( > 8
-                                            m<sup>2</sup>)</label>
+                                            class="custom-control-input" value="Besar (> 8 m<sup>2</sup>)">
+                                        <label class="custom-control-label" for="ukuranRumah4">Besar (> 8 m<sup>2</sup>)</label>
                                     </div>
                                     <label for="ukuranRumah" class="invalid-feedback"></label>
                                 </div>
@@ -193,19 +189,19 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dinding1" name="dinding" class="custom-control-input">
+                                        <input type="radio" id="dinding1" name="dinding" class="custom-control-input" value="Bilik bambu/Kayu">
                                         <label class="custom-control-label" for="dinding1">Bilik bambu/Kayu</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dinding2" name="dinding" class="custom-control-input">
+                                        <input type="radio" id="dinding2" name="dinding" class="custom-control-input" value="Semi">
                                         <label class="custom-control-label" for="dinding2">Semi</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dinding3" name="dinding" class="custom-control-input">
+                                        <input type="radio" id="dinding3" name="dinding" class="custom-control-input" value="Gypusm">
                                         <label class="custom-control-label" for="dinding3">Gypusm</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dinding4" name="dinding" class="custom-control-input">
+                                        <input type="radio" id="dinding4" name="dinding" class="custom-control-input" value="Tembok/Beton">
                                         <label class="custom-control-label" for="dinding4">Tembok/Beton</label>
                                     </div>
                                     <label for="dinding" class="invalid-feedback"></label>
@@ -218,19 +214,19 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="lantai1" name="lantai" class="custom-control-input">
+                                        <input type="radio" id="lantai1" name="lantai" class="custom-control-input" value="Tanah">
                                         <label class="custom-control-label" for="lantai1">Tanah</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="lantai2" name="lantai" class="custom-control-input">
+                                        <input type="radio" id="lantai2" name="lantai" class="custom-control-input" value="Panggung">
                                         <label class="custom-control-label" for="lantai2">Panggung</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="lantai3" name="lantai" class="custom-control-input">
+                                        <input type="radio" id="lantai3" name="lantai" class="custom-control-input" value="Semen">
                                         <label class="custom-control-label" for="lantai3">Semen</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="lantai4" name="lantai" class="custom-control-input">
+                                        <input type="radio" id="lantai4" name="lantai" class="custom-control-input" value="Keramik">
                                         <label class="custom-control-label" for="lantai4">Keramik</label>
                                     </div>
                                     <label for="lantai" class="invalid-feedback"></label>
@@ -243,15 +239,15 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="atap1" name="atap" class="custom-control-input">
+                                        <input type="radio" id="atap1" name="atap" class="custom-control-input" value="Kirai/Ijuk<">
                                         <label class="custom-control-label" for="atap1">Kirai/Ijuk</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="atap2" name="atap" class="custom-control-input">
+                                        <input type="radio" id="atap2" name="atap" class="custom-control-input" value="Genteng/Seng">
                                         <label class="custom-control-label" for="atap2">Genteng/Seng</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="atap3" name="atap" class="custom-control-input">
+                                        <input type="radio" id="atap3" name="atap" class="custom-control-input" value="Asbes/Berglazur">
                                         <label class="custom-control-label" for="atap3">Asbes/Berglazur</label>
                                     </div>
                                     <label for="atap" class="invalid-feedback"></label>
@@ -265,22 +261,22 @@
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="kepemilikanRumah1" name="kepemilikanRumah"
-                                            class="custom-control-input">
+                                            class="custom-control-input" value="Menumpang">
                                         <label class="custom-control-label" for="kepemilikanRumah1">Menumpang</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="kepemilikanRumah2" name="kepemilikanRumah"
-                                            class="custom-control-input">
+                                            class="custom-control-input" value="Kontrak">
                                         <label class="custom-control-label" for="kepemilikanRumah2">Kontrak</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="kepemilikanRumah3" name="kepemilikanRumah"
-                                            class="custom-control-input">
+                                            class="custom-control-input" value="Keluarga">
                                         <label class="custom-control-label" for="kepemilikanRumah3">Keluarga</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="kepemilikanRumah4" name="kepemilikanRumah"
-                                            class="custom-control-input">
+                                            class="custom-control-input" value="Sendiri">
                                         <label class="custom-control-label" for="kepemilikanRumah4">Sendiri</label>
                                     </div>
                                     <label for="kepemilikanRumah" class="invalid-feedback"></label>
@@ -293,15 +289,15 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dapur1" name="dapur" class="custom-control-input">
+                                        <input type="radio" id="dapur1" name="dapur" class="custom-control-input" value="Tungku">
                                         <label class="custom-control-label" for="dapur1">Tungku</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dapur2" name="dapur" class="custom-control-input">
+                                        <input type="radio" id="dapur2" name="dapur" class="custom-control-input" value="Kompor Minyak">
                                         <label class="custom-control-label" for="dapur2">Kompor Minyak</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="dapur3" name="dapur" class="custom-control-input">
+                                        <input type="radio" id="dapur3" name="dapur" class="custom-control-input" value="Kompor Gas/Listrik">
                                         <label class="custom-control-label" for="dapur3">Kompor Gas/Listrik</label>
                                     </div>
                                     <label for="dapur" class="invalid-feedback"></label>
@@ -314,19 +310,19 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kursi1" name="kursi" class="custom-control-input">
+                                        <input type="radio" id="kursi1" name="kursi" class="custom-control-input" value="Lesehan">
                                         <label class="custom-control-label" for="kursi1">Lesehan</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kursi2" name="kursi" class="custom-control-input">
+                                        <input type="radio" id="kursi2" name="kursi" class="custom-control-input" value="Balai Bambu">
                                         <label class="custom-control-label" for="kursi2">Balai Bambu</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kursi3" name="kursi" class="custom-control-input">
+                                        <input type="radio" id="kursi3" name="kursi" class="custom-control-input" value="Kayu">
                                         <label class="custom-control-label" for="kursi3">Kayu</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kursi4" name="kursi" class="custom-control-input">
+                                        <input type="radio" id="kursi4" name="kursi" class="custom-control-input" value="Sofa">
                                         <label class="custom-control-label" for="kursi4">Sofa</label>
                                     </div>
                                     <label for="kursi" class="invalid-feedback"></label>
@@ -349,21 +345,21 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kebun1" name="kebun" class="custom-control-input">
+                                        <input type="radio" id="kebun1" name="kebun" class="custom-control-input" value="Tidak Ada">
                                         <label class="custom-control-label" for="kebun1">Tidak Ada</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kebun2" name="kebun" class="custom-control-input">
+                                        <input type="radio" id="kebun2" name="kebun" class="custom-control-input" value="< 1000 m<sup>2</sup>">
                                         <label class="custom-control-label" for="kebun2">
                                             < 1000 m<sup>2</sup>
                                         </label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kebun3" name="kebun" class="custom-control-input">
+                                        <input type="radio" id="kebun3" name="kebun" class="custom-control-input" value="1000 - 5000 m<sup>2</sup>">
                                         <label class="custom-control-label" for="kebun3">1000 - 5000 m<sup>2</sup></label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kebun4" name="kebun" class="custom-control-input">
+                                        <input type="radio" id="kebun4" name="kebun" class="custom-control-input" value="> 5000 m<sup>2</sup>">
                                         <label class="custom-control-label" for="kebun4">> 5000 m<sup>2</sup></label>
                                     </div>
                                     <label for="kebun" class="invalid-feedback"></label>
@@ -376,23 +372,23 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="elektronik1" name="elektronik" class="custom-control-input">
+                                        <input type="radio" id="elektronik1" name="elektronik" class="custom-control-input" value="Radio">
                                         <label class="custom-control-label" for="elektronik1">Radio</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="elektronik2" name="elektronik" class="custom-control-input">
+                                        <input type="radio" id="elektronik2" name="elektronik" class="custom-control-input" value="Tape">
                                         <label class="custom-control-label" for="elektronik2">Tape</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="elektronik3" name="elektronik" class="custom-control-input">
+                                        <input type="radio" id="elektronik3" name="elektronik" class="custom-control-input" value="Televisi">
                                         <label class="custom-control-label" for="elektronik3">Televisi</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="elektronik4" name="elektronik" class="custom-control-input">
+                                        <input type="radio" id="elektronik4" name="elektronik" class="custom-control-input" value="CD. Player">
                                         <label class="custom-control-label" for="elektronik4">CD. Player</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="elektronik5" name="elektronik" class="custom-control-input">
+                                        <input type="radio" id="elektronik5" name="elektronik" class="custom-control-input" value="Kulkas">
                                         <label class="custom-control-label" for="elektronik5">Kulkas</label>
                                     </div>
                                     <label for="elektronik" class="invalid-feedback"></label>
@@ -405,19 +401,19 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kendaraan1" name="kendaraan" class="custom-control-input">
+                                        <input type="radio" id="kendaraan1" name="kendaraan" class="custom-control-input" value="Tidak Ada">
                                         <label class="custom-control-label" for="kendaraan1">Tidak Ada</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kendaraan2" name="kendaraan" class="custom-control-input">
+                                        <input type="radio" id="kendaraan2" name="kendaraan" class="custom-control-input" value="Sepeda Kayuh">
                                         <label class="custom-control-label" for="kendaraan2">Sepeda Kayuh</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kendaraan3" name="kendaraan" class="custom-control-input">
+                                        <input type="radio" id="kendaraan3" name="kendaraan" class="custom-control-input" value="Sepeda Motor">
                                         <label class="custom-control-label" for="kendaraan3">Sepeda Motor</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kendaraan4" name="kendaraan" class="custom-control-input">
+                                        <input type="radio" id="kendaraan4" name="kendaraan" class="custom-control-input" value="Mobil">
                                         <label class="custom-control-label" for="kendaraan4">Mobil</label>
                                     </div>
                                     <label for="kendaraan" class="invalid-feedback"></label>
@@ -490,16 +486,15 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="gunaAset1" name="gunaAset" class="custom-control-input">
-                                        <label class="custom-control-label" for="gunaAset1">Bertambahnya aset
-                                            produktif</label>
+                                        <input type="radio" id="gunaAset1" name="gunaAset" class="custom-control-input" value="Bertambahnya aset produktif">
+                                        <label class="custom-control-label" for="gunaAset1">Bertambahnya aset produktif</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="gunaAset2" name="gunaAset" class="custom-control-input">
+                                        <input type="radio" id="gunaAset2" name="gunaAset" class="custom-control-input" value="Investasi usaha lain">
                                         <label class="custom-control-label" for="gunaAset2">Investasi usaha lain</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="gunaAset3" name="gunaAset" class="custom-control-input">
+                                        <input type="radio" id="gunaAset3" name="gunaAset" class="custom-control-input" value="Investasi usaha turunan">
                                         <label class="custom-control-label" for="gunaAset3">Investasi usaha turunan</label>
                                     </div>
                                 </div>
@@ -625,7 +620,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Keterangan</label>
                                             <div class="col-sm-9">
-                                                <textarea name="keterangan[]" class="form-control" rows="2"></textarea>
+                                                <textarea name="keteranganKeluarga[]" class="form-control" rows="2"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -803,13 +798,13 @@
                                 <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" id="isPinjam1" name="isPinjam" class="custom-control-input">
+                                            <input type="radio" id="isPinjam1" name="isPinjam" class="custom-control-input" value="Ya">
                                             <label class="custom-control-label" for="isPinjam1">Ya</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="isPinjam2" name="isPinjam" class="custom-control-input">
+                                            <input type="radio" id="isPinjam2" name="isPinjam" class="custom-control-input" value="Tidak">
                                             <label class="custom-control-label" for="isPinjam2">Tidak</label>
                                         </div>
                                     </div>
@@ -873,7 +868,7 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="caraPengembalian1" name="caraPengembalian"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Diangsur/Dicicil">
                                             <label class="custom-control-label"
                                                 for="caraPengembalian1">Diangsur/Dicicil</label>
                                         </div>
@@ -881,7 +876,7 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="caraPengembalian2" name="caraPengembalian"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Jatuh Tempo">
                                             <label class="custom-control-label" for="caraPengembalian2">Jatuh Tempo</label>
                                         </div>
                                     </div>
@@ -905,21 +900,21 @@
                                             <div class="p-2 bd-highlight">
                                                 <div class="custom-control custom-radio ">
                                                     <input type="radio" id="pinjamPer1" name="pinjamPer"
-                                                        class="custom-control-input">
+                                                        class="custom-control-input" value="Minggu">
                                                     <label class="custom-control-label" for="pinjamPer1">Minggu</label>
                                                 </div>
                                             </div>
                                             <div class="p-2 bd-highlight">
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" id="pinjamPer2" name="pinjamPer"
-                                                        class="custom-control-input">
+                                                        class="custom-control-input" value="Bulan">
                                                     <label class="custom-control-label" for="pinjamPer2">Bulan</label>
                                                 </div>
                                             </div>
                                             <div class="p-2 bd-highlight">
                                                 <div class="custom-control custom-radio">
                                                     <input type="radio" id="pinjamPer3" name="pinjamPer"
-                                                        class="custom-control-input">
+                                                        class="custom-control-input" value="Tahun">
                                                     <label class="custom-control-label" for="pinjamPer3">Tahun</label>
                                                 </div>
                                             </div>
@@ -953,13 +948,13 @@
                                 <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" id="isLunas1" name="isLunas" class="custom-control-input">
+                                            <input type="radio" id="isLunas1" name="isLunas" class="custom-control-input" value="Sudah">
                                             <label class="custom-control-label" for="isLunas1">Sudah</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" id="isLunas2" name="isLunas" class="custom-control-input">
+                                            <input type="radio" id="isLunas2" name="isLunas" class="custom-control-input" value="Belum">
                                             <label class="custom-control-label" for="isLunas2">Belum</label>
                                         </div>
                                     </div>
@@ -975,14 +970,14 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="terlibatProgram1" name="terlibatProgram"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Pernah">
                                             <label class="custom-control-label" for="terlibatProgram1">Pernah</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="terlibatProgram2" name="terlibatProgram"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Belum">
                                             <label class="custom-control-label" for="terlibatProgram2">Belum</label>
                                         </div>
                                     </div>
@@ -998,14 +993,14 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="pernahPengurus1" name="pernahPengurus"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Pernah">
                                             <label class="custom-control-label" for="pernahPengurus1">Pernah</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="pernahPengurus2" name="pernahPengurus"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Belum">
                                             <label class="custom-control-label" for="pernahPengurus2">Belum</label>
                                         </div>
                                     </div>
@@ -1032,14 +1027,14 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="kebiasaanPatologis1" name="kebiasaanPatologis"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Ya">
                                             <label class="custom-control-label" for="kebiasaanPatologis1">Ya</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="kebiasaanPatologis2" name="kebiasaanPatologis"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Tidak">
                                             <label class="custom-control-label" for="kebiasaanPatologis2">Tidak</label>
                                         </div>
                                     </div>
@@ -1083,21 +1078,21 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="kegiatanPengajian1" name="kegiatanPengajian"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Rutin">
                                             <label class="custom-control-label" for="kegiatanPengajian1">Rutin</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="kegiatanPengajian2" name="kegiatanPengajian"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Jarang">
                                             <label class="custom-control-label" for="kegiatanPengajian2">Jarang</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="kegiatanPengajian3" name="kegiatanPengajian"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Tidak Pernah">
                                             <label class="custom-control-label" for="kegiatanPengajian3">Tidak
                                                 Pernah</label>
                                         </div>
@@ -1113,21 +1108,21 @@
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="kegiatanBerinfaq1" name="kegiatanBerinfaq"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Rutin">
                                             <label class="custom-control-label" for="kegiatanBerinfaq1">Rutin</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="kegiatanBerinfaq2" name="kegiatanBerinfaq"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Jarang">
                                             <label class="custom-control-label" for="kegiatanBerinfaq2">Jarang</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="kegiatanBerinfaq3" name="kegiatanBerinfaq"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Tidak Pernah">
                                             <label class="custom-control-label" for="kegiatanBerinfaq3">Tidak Pernah</label>
                                         </div>
                                     </div>
@@ -1145,7 +1140,7 @@
                         <div class="form-group row">
                             <label for="keterangan3" class="col-sm-3 col-form-label">Keterangan</label>
                             <div class="col-sm-9">
-                                <textarea name="alamatsekarang" class="form-control" id="keterangan3" rows="3"></textarea>
+                                <textarea name="keterangan" class="form-control" id="keterangan3" rows="3"></textarea>
                             </div>
                         </div>
 
