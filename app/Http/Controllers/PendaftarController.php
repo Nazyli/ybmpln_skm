@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pendaftar;
+use App\Provinsi;
 use Illuminate\Http\Request;
 
 class PendaftarController extends Controller
@@ -14,7 +15,8 @@ class PendaftarController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.pendaftar');
+
     }
 
     /**
@@ -35,7 +37,9 @@ class PendaftarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
+        return response()->json($request->all());
+
     }
 
     /**
@@ -81,5 +85,11 @@ class PendaftarController extends Controller
     public function destroy(Pendaftar $pendaftar)
     {
         //
+    }
+
+    public function provinsi()
+    {
+        $provinsi = Provinsi::all();
+        return view('dashboard.pendaftar',compact('provinsi'));
     }
 }
