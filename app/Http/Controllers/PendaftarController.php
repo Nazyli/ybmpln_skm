@@ -37,12 +37,6 @@ class PendaftarController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $request->validate([
-            'nama' => 'required',
-        ], [
-            'nama.required' => 'Nama Wajib diisi',
-        ]);
         // return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
         return response()->json($request->all());
 

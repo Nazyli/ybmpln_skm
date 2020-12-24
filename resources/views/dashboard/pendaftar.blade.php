@@ -34,8 +34,7 @@
                             </div>
                         </div>
                         <p class="text-center">
-                            <a class="text-primary" data-toggle="collapse" href="#collapseExample" id="dataSekarang"
-                                onclick=dataSekarang()>
+                            <a class="text-primary" data-toggle="collapse" href="#collapseExample" id="dataSekarang">
                                 Tambah Data Alamat Sekarang lebih rinci
                             </a>
                         </p>
@@ -52,18 +51,15 @@
                                 <div class="col-sm-3 mb-1">
                                     <select class="kabupaten form-control fontSelect" style="width: 100%;"
                                         name="kabupaten1">
-                                        <option value="">Select</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-3 mb-1">
                                     <select class="kecamatan form-control fontSelect" style="width: 100%;"
                                         name="kecamatan1">
-                                        <option value="">Select</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-3 mb-1">
                                     <select class="desa form-control fontSelect" style="width: 100%;" name="desa1">
-                                        <option value="">Select</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-12">
@@ -80,8 +76,7 @@
                             </div>
                         </div>
                         <p class="text-center">
-                            <a class="text-primary" data-toggle="collapse" href="#alamatasal" id="dataasal"
-                                onclick=dataAsal()>
+                            <a class="text-primary" data-toggle="collapse" href="#alamatasal" id="dataAsal">
                                 Tambah Data Alamat Asal lebih rinci
                             </a>
                         </p>
@@ -98,19 +93,14 @@
                                 <div class="col-sm-3 mb-1">
                                     <select class="kabupaten form-control fontSelect" style="width: 100%;"
                                         name="kabupaten2">
-                                        <option value="">Select</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-3 mb-1">
                                     <select class="kecamatan form-control fontSelect" style="width: 100%;"
-                                        name="kecamatan2">
-                                        <option value="">Select</option>
-                                    </select>
+                                        name="kecamatan2"></select>
                                 </div>
                                 <div class="col-sm-3 mb-1">
-                                    <select class="desa form-control fontSelect" style="width: 100%;" name="desa2">
-                                        <option value="">Select</option>
-                                    </select>
+                                    <select class="desa form-control fontSelect" style="width: 100%;" name="desa2"></select>
                                 </div>
                                 <div class="col-sm-12">
                                     <ol class="breadcrumb justify-content-center" id="breadcrumbAsal">
@@ -131,7 +121,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="inputprogram3" class="col-sm-3 col-form-label">Program</label>
+                            <label for="inputprogram3" class="col-sm-3 col-form-label">Nama Program</label>
                             <div class="col-sm-9">
                                 <input type="text" name="program" class="form-control" id="inputprogram3"
                                     placeholder="Program">
@@ -193,6 +183,7 @@
                                         <label class="custom-control-label" for="ukuranRumah4">Besar ( > 8
                                             m<sup>2</sup>)</label>
                                     </div>
+                                    <label for="ukuranRumah" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -217,6 +208,7 @@
                                         <input type="radio" id="dinding4" name="dinding" class="custom-control-input">
                                         <label class="custom-control-label" for="dinding4">Tembok/Beton</label>
                                     </div>
+                                    <label for="dinding" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -241,6 +233,7 @@
                                         <input type="radio" id="lantai4" name="lantai" class="custom-control-input">
                                         <label class="custom-control-label" for="lantai4">Keramik</label>
                                     </div>
+                                    <label for="lantai" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -261,6 +254,7 @@
                                         <input type="radio" id="atap3" name="atap" class="custom-control-input">
                                         <label class="custom-control-label" for="atap3">Asbes/Berglazur</label>
                                     </div>
+                                    <label for="atap" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -289,6 +283,7 @@
                                             class="custom-control-input">
                                         <label class="custom-control-label" for="kepemilikanRumah4">Sendiri</label>
                                     </div>
+                                    <label for="kepemilikanRumah" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -309,6 +304,7 @@
                                         <input type="radio" id="dapur3" name="dapur" class="custom-control-input">
                                         <label class="custom-control-label" for="dapur3">Kompor Gas/Listrik</label>
                                     </div>
+                                    <label for="dapur" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -333,6 +329,7 @@
                                         <input type="radio" id="kursi4" name="kursi" class="custom-control-input">
                                         <label class="custom-control-label" for="kursi4">Sofa</label>
                                     </div>
+                                    <label for="kursi" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -369,6 +366,7 @@
                                         <input type="radio" id="kebun4" name="kebun" class="custom-control-input">
                                         <label class="custom-control-label" for="kebun4">> 5000 m<sup>2</sup></label>
                                     </div>
+                                    <label for="kebun" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -397,6 +395,7 @@
                                         <input type="radio" id="elektronik5" name="elektronik" class="custom-control-input">
                                         <label class="custom-control-label" for="elektronik5">Kulkas</label>
                                     </div>
+                                    <label for="elektronik" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -419,8 +418,9 @@
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="kendaraan4" name="kendaraan" class="custom-control-input">
-                                        <label class="custom-control-label" for="kendaraan4">Sepeda Motor</label>
+                                        <label class="custom-control-label" for="kendaraan4">Mobil</label>
                                     </div>
+                                    <label for="kendaraan" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -455,18 +455,20 @@
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="simpanan1" name="simpanan" class="custom-control-input">
                                         <label class="custom-control-label" for="simpanan1">
-                                            <div class="input-group input-group-sm mb-3">
+                                            <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroup-sizing-sm">Rp</span>
                                                 </div>
-                                                <input type="number" class="form-control">
+                                                <input type="number" class="form-control" name="nilaiSimpanan">
                                             </div>
                                         </label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="simpanan2" name="simpanan" class="custom-control-input">
+                                        <input type="radio" id="simpanan2" name="simpanan" class="custom-control-input"
+                                            value="Tidak Ada">
                                         <label class="custom-control-label" for="simpanan2">Tidak Ada</label>
                                     </div>
+                                    <label for="simpanan" class="invalid-feedback"></label>
                                 </div>
                             </div>
                         </fieldset>
@@ -520,13 +522,13 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="dataKeluarga"></div>
-                            <div class="col-lg-6 dataKeluarga" id="dataKeluarga-1">
+                            <div class="col-lg-6 dataKeluarga" id="dataKeluarga">
                                 <div class="card mb-4">
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">Data Keluarga 1</h6>
                                         <button type="button" class="btn btn-danger btn-sm"
-                                            onclick="javascript:removeElement('dataKeluarga-1');">
+                                            onclick="javascript:removeElement('dataKeluarga');">
                                             <i class="fas fa-xs fa-trash"></i>
                                         </button>
                                     </div>
@@ -535,21 +537,22 @@
                                             <label class="col-sm-3 col-form-label">Nama</label>
                                             <div class="col-sm-9">
                                                 <input type="text" name="namaKeluarga[]" class="form-control"
-                                                    placeholder="Nama Keluarga">
+                                                    id="namaKeluarga" placeholder="Nama Keluarga">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Umur</label>
                                             <div class="col-sm-9">
-                                                <input type="number" name="umur[]" class="form-control" placeholder="Umur">
+                                                <input type="number" name="umur[]" class="form-control" placeholder="Umur"
+                                                    min="1" id="umur">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">hubungan</label>
+                                            <label class="col-sm-3 col-form-label">Hubungan</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <select class="hubungan form-control" name="hubungan[]">
-                                                        <option value="">Select</option>
+                                                    <select class="hubungan form-control" name="hubungan[]" id="hubungan">
+                                                        <option value="" selected disabled>Hubungan Dalam Keluarga</option>
                                                         <option value="Kepala Keluarga">Kepala Keluarga</option>
                                                         <option value="Suami">Suami</option>
                                                         <option value="Istri">Istri</option>
@@ -569,8 +572,8 @@
                                             <label class="col-sm-3 col-form-label">Status</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <select class="status form-control" name="status[]">
-                                                        <option value="">Select</option>
+                                                    <select class="status form-control" name="status[]" id="status">
+                                                        <option value="" selected disabled>Status Perkawinan</option>
                                                         <option value="Kawin">Kawin</option>
                                                         <option value="Belum Kawin">Belum Kawin</option>
                                                     </select>
@@ -584,7 +587,7 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" placeholder="Pekerjaan Utama"
-                                                        name="pekerjaanUtama[]">
+                                                        name="pekerjaanUtama[]" id="pekerjaanUtama">
 
                                                 </div>
                                                 <div class="col-sm-6">
@@ -598,8 +601,9 @@
                                             <label class="col-sm-3 col-form-label">Pendidikan</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <select class="pendidikan form-control" name="pendidikan[]">
-                                                        <option value="">Select</option>
+                                                    <select class="pendidikan form-control" name="pendidikan[]"
+                                                        id="pendidikan">
+                                                        <option value="" selected disabled>Pendidikan Terakhir</option>
                                                         <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option>
                                                         <option value="Belum Tamat SD / Sederajat">Belum Tamat SD /
                                                             Sederajat
@@ -627,6 +631,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -654,7 +659,7 @@
                                         <div class="form-group row penghasilan">
                                             <label class="col-sm-6 col-form-label">Penghasilan Usaha Pokok</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -666,7 +671,7 @@
                                         <div class="form-group row penghasilan">
                                             <label class="col-sm-6 col-form-label">Penghasilan Usaha Simpanan</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -678,7 +683,7 @@
                                         <div class="form-group row penghasilan">
                                             <label class="col-sm-6 col-form-label">Penghasilan Istri/Suami</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -690,7 +695,7 @@
                                         <div class="form-group row penghasilan">
                                             <label class="col-sm-6 col-form-label">Penghasilan Anak/Menantu</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -718,7 +723,7 @@
                                         <div class="form-group row pengeluaran">
                                             <label class="col-sm-6 col-form-label">Kebutuhan Dapur</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -730,7 +735,7 @@
                                         <div class="form-group row pengeluaran">
                                             <label class="col-sm-6 col-form-label">Pendidikan</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -742,7 +747,7 @@
                                         <div class="form-group row pengeluaran">
                                             <label class="col-sm-6 col-form-label">Kesehatan</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -754,7 +759,7 @@
                                         <div class="form-group row pengeluaran">
                                             <label class="col-sm-6 col-form-label">Transportasi</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -767,7 +772,7 @@
                                             <label class="col-sm-6 col-form-label">Iuran Rutin (Listrik, Siskamling,
                                                 PAM)</label>
                                             <div class="col-sm-6">
-                                                <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group input-group-sm">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Rp</span>
                                                     </div>
@@ -795,7 +800,7 @@
                             <label class="col-sm-6 col-form-label">Apakah pernah melakukan peminjaman dana sebelumnya
                                 ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="isPinjam1" name="isPinjam" class="custom-control-input">
@@ -809,46 +814,47 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="isPinjam" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Jika Ya, lembaga apa yang memberi pinjaman ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="namaLembaga1" name="namaLembaga"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Bank">
                                             <label class="custom-control-label" for="namaLembaga1">Bank</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="namaLembaga2" name="namaLembaga"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="Koperasi">
                                             <label class="custom-control-label" for="namaLembaga2">Koperasi</label>
                                         </div>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="namaLembaga3" name="namaLembaga"
-                                                class="custom-control-input">
+                                                class="custom-control-input" value="">
                                             <label class="custom-control-label" for="namaLembaga3">
-                                                <input type="text" class="form-control form-control-sm"
-                                                    style="margin-top:-5px;">
+                                                <input type="text" class="form-control form-control-sm" style="margin-top:-5px;" name="namaLembagaInput">
                                             </label>
                                         </div>
                                     </div>
                                 </div>
+                                <label for="namaLembaga" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Berapa besar anda meminjam pada lembaga tersebut
                                 ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
-                                        <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group input-group-sm">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
@@ -863,7 +869,7 @@
                             <label class="col-sm-6 col-form-label">Bagaimana cara anda mengembalikan dana yang dipinjam
                                 ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="caraPengembalian1" name="caraPengembalian"
@@ -880,37 +886,45 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="caraPengembalian" class="invalid-feedback"></label>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Berapa lama masa pinjaman anda ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
-                                    <div class="p-2 bd-highlight">
-                                        <input type="number" class="form-control form-control-sm" name="lamaPinjam"
-                                            placeholder="Lama pinjam">
-                                    </div>
-                                    <div class="p-2 bd-highlight">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" id="pinjamPer1" name="pinjamPer"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="pinjamPer1">Minggu</label>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="p-2 bd-highlight">
+                                            <input type="number" class="form-control form-control-sm" name="lamaPinjam"
+                                                placeholder="Lama pinjam">
                                         </div>
                                     </div>
-                                    <div class="p-2 bd-highlight">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="pinjamPer2" name="pinjamPer"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="pinjamPer2">Bulan</label>
+                                    <div class="col-sm-8">
+                                        <div class="d-flex flex-row bd-highlight">
+                                            <div class="p-2 bd-highlight">
+                                                <div class="custom-control custom-radio ">
+                                                    <input type="radio" id="pinjamPer1" name="pinjamPer"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label" for="pinjamPer1">Minggu</label>
+                                                </div>
+                                            </div>
+                                            <div class="p-2 bd-highlight">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="pinjamPer2" name="pinjamPer"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label" for="pinjamPer2">Bulan</label>
+                                                </div>
+                                            </div>
+                                            <div class="p-2 bd-highlight">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="pinjamPer3" name="pinjamPer"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label" for="pinjamPer3">Tahun</label>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="p-2 bd-highlight">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="pinjamPer3" name="pinjamPer"
-                                                class="custom-control-input">
-                                            <label class="custom-control-label" for="pinjamPer3">Tahun</label>
-                                        </div>
+                                        <label for="pinjamPer" class="invalid-feedback"></label>
                                     </div>
                                 </div>
                             </div>
@@ -920,9 +934,9 @@
                                 itu
                                 ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
-                                        <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group input-group-sm">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Rp</span>
                                             </div>
@@ -936,7 +950,7 @@
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Apakah pinjaman tersebut saat ini sudah Lunas ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="isLunas1" name="isLunas" class="custom-control-input">
@@ -950,13 +964,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="isLunas" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Apakah sebelumnya pernah terlibat program ekonomi/sosial
                                 ?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="terlibatProgram1" name="terlibatProgram"
@@ -972,13 +987,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="terlibatProgram" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Apakah pernah menjadi pengurus dalam sebuah
                                 kelompok/program?</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="pernahPengurus1" name="pernahPengurus"
@@ -994,6 +1010,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="pernahPengurus" class="invalid-feedback"></label>
                             </div>
                         </div>
 
@@ -1011,7 +1028,7 @@
                             <label class="col-sm-6 col-form-label">Kebiasaan Patologis (judi, miras, pelacur,
                                 narkoba)</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="kebiasaanPatologis1" name="kebiasaanPatologis"
@@ -1027,12 +1044,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="kebiasaanPatologis" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Sholat Fardhu</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="sholatFardu1" name="sholatFardu"
@@ -1055,12 +1073,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="sholatFardu" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Kegiatan Pengajian</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="kegiatanPengajian1" name="kegiatanPengajian"
@@ -1084,12 +1103,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="kegiatanPengajian" class="invalid-feedback"></label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-6 col-form-label">Kebiasaan berinfaq</label>
                             <div class="col-sm-6">
-                                <div class="d-flex flex-row bd-highlight mb-3">
+                                <div class="d-flex flex-row bd-highlight">
                                     <div class="p-2 bd-highlight">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" id="kegiatanBerinfaq1" name="kegiatanBerinfaq"
@@ -1112,6 +1132,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <label for="kegiatanBerinfaq" class="invalid-feedback"></label>
                             </div>
                         </div>
                     </div>
@@ -1122,10 +1143,9 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="inputalamatsekarang3" class="col-sm-3 col-form-label">Keterangan</label>
+                            <label for="keterangan3" class="col-sm-3 col-form-label">Keterangan</label>
                             <div class="col-sm-9">
-                                <textarea name="alamatsekarang" class="form-control" id="inputalamatsekarang3"
-                                    rows="3"></textarea>
+                                <textarea name="alamatsekarang" class="form-control" id="keterangan3" rows="3"></textarea>
                             </div>
                         </div>
 
@@ -1142,481 +1162,5 @@
 @endsection
 
 @section('js')
-    <script>
-        $('.hubungan').select2({
-            placeholder: "Hubungan Dalam Keluarga",
-            allowClear: true
-        });
-        $('.status').select2({
-            placeholder: "Status Perkawinan",
-            allowClear: true
-        });
-        $('.pendidikan').select2({
-            placeholder: "Pendidikan Terakhir",
-            allowClear: true
-        });
-        $('input[name="unggas"]').TouchSpin({
-            min: 0,
-            max: 100,
-            initval: 0,
-            boostat: 5,
-            maxboostedstep: 10,
-            verticalbuttons: true,
-            verticalupclass: 'glyphicon glyphicon-plus',
-            verticaldownclass: 'glyphicon glyphicon-minus'
-        });
-        $('input[name="kambing"]').TouchSpin({
-            min: 0,
-            max: 100,
-            initval: 0,
-            boostat: 5,
-            maxboostedstep: 10,
-            verticalbuttons: true,
-            verticalupclass: 'glyphicon glyphicon-plus',
-            verticaldownclass: 'glyphicon glyphicon-minus'
-        });
-        $('input[name="sapi"]').TouchSpin({
-            min: 0,
-            max: 100,
-            initval: 0,
-            boostat: 5,
-            maxboostedstep: 10,
-            verticalbuttons: true,
-            verticalupclass: 'glyphicon glyphicon-plus',
-            verticaldownclass: 'glyphicon glyphicon-minus'
-        });
-        $('.provinsi').select2({
-            placeholder: "Select Provinsi",
-            allowClear: true,
-            dropdownCssClass: "fontSelect",
-        });
-        $('.kabupaten').select2({
-            placeholder: "Select Kabupaten",
-            allowClear: true,
-            dropdownCssClass: "fontSelect",
-        });
-        $('.kecamatan').select2({
-            placeholder: "Select Kecamatan",
-            allowClear: true,
-            dropdownCssClass: "fontSelect",
-        });
-        $('.desa').select2({
-            placeholder: "Select Desa",
-            allowClear: true,
-            dropdownCssClass: "fontSelect",
-        });
-
-        $('#simple-date1 .input-group.date').datepicker({
-            format: 'dd/mm/yyyy',
-            todayBtn: 'linked',
-            todayHighlight: true,
-            autoclose: true,
-        }).datepicker("setDate", 'now');
-
-        function dataSekarang() {
-            let x = document.getElementById("dataSekarang");
-            if (x.textContent == "Hapus Data") {
-                x.innerHTML = "Tambah Data Alamat Sekarang lebih rinci";
-                $("#breadcrumbSekarang li").remove();
-                $('select[name="provinsi1"]').empty();
-                $('select[name="kabupaten1"]').empty();
-                $('select[name="kecamatan1"]').empty();
-                $('select[name="desa1"]').empty();
-            } else {
-                x.innerHTML = "Hapus Data";
-            }
-        }
-
-        function dataAsal() {
-            let x = document.getElementById("dataasal");
-            if (x.textContent == "Hapus Data") {
-                x.innerHTML = "Tambah Data Alamat Asal lebih rinci";
-                $("#breadcrumbAsal li").remove();
-                $('select[name="provinsi2"]').empty();
-                $('select[name="kabupaten2"]').empty();
-                $('select[name="kecamatan2"]').empty();
-                $('select[name="desa2"]').empty();
-            } else {
-                x.innerHTML = "Hapus Data";
-            }
-        }
-
-        function breadcrumbSekarang() {
-            $("#breadcrumbSekarang li").remove();
-            let p = document.getElementsByName("provinsi1")[0];
-            let k = document.getElementsByName("kabupaten1")[0];
-            let ke = document.getElementsByName("kecamatan1")[0];
-            let d = document.getElementsByName("desa1")[0];
-            $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + p.options[p.selectedIndex].text + '</li>');
-            if (k.length >= 1) {
-                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + k.options[k.selectedIndex].text +
-                    '</li>');
-            }
-            if (ke.length >= 1) {
-                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + ke.options[ke.selectedIndex].text +
-                    '</li>');
-            }
-            if (d.length >= 1) {
-                $('#breadcrumbSekarang').append('<li class="breadcrumb-item">' + d.options[d.selectedIndex].text +
-                    '</li>');
-            }
-        }
-
-        function breadcrumbAsal() {
-            $("#breadcrumbAsal li").remove();
-            let p = document.getElementsByName("provinsi2")[0];
-            let k = document.getElementsByName("kabupaten2")[0];
-            let ke = document.getElementsByName("kecamatan2")[0];
-            let d = document.getElementsByName("desa2")[0];
-            $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + p.options[p.selectedIndex].text + '</li>');
-            if (k.length >= 1) {
-                $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + k.options[k.selectedIndex].text + '</li>');
-            }
-            if (ke.length >= 1) {
-                $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + ke.options[ke.selectedIndex].text +
-                    '</li>');
-            }
-            if (d.length >= 1) {
-                $('#breadcrumbAsal').append('<li class="breadcrumb-item">' + d.options[d.selectedIndex].text + '</li>');
-            }
-        }
-        var fileId = 1;
-
-        function removeElement(elementId) {
-            // Removes an element from the document
-            var element = document.getElementById(elementId);
-            element.parentNode.removeChild(element);
-        }
-        $(document).ready(function() {
-            $("button#addDataKeluarga").on("click", function() {
-                fileId++;
-                let formKeluarga = `<div class="col-lg-6 dataKeluarga" id="dataKeluarga-` + fileId + `">
-                                                    <div class="card mb-4">
-                                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                            <h6 class="m-0 font-weight-bold text-primary">Data Keluarga ` +
-                    fileId +
-                    `</h6>
-                                                            <button type="button" class="btn btn-danger btn-sm" onclick="javascript:removeElement('dataKeluarga-` +
-                    fileId + `'); return false;">
-                                                                <i class="fas fa-xs fa-trash"></i>
-                                                            </button>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Nama</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="text" name="namaKeluarga[]" class="form-control"
-                                                                        placeholder="Nama Keluarga">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Umur</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="number" name="umur[]" class="form-control" placeholder="Umur">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Hubungan</label>
-                                                                <div class="col-sm-9">
-                                                                    <div class="form-group">
-                                                                        <select class="hubungan-` + fileId + ` form-control" name="hubungan[]">
-                                                                            <option value="">Select</option>
-                                                                            <option value="Kepala Keluarga">Kepala Keluarga</option>
-                                                                            <option value="Suami">Suami</option>
-                                                                            <option value="Istri">Istri</option>
-                                                                            <option value="Anak">Anak</option>
-                                                                            <option value="Menantu">Menantu</option>
-                                                                            <option value="Cucu">Cucu</option>
-                                                                            <option value="Orang Tua">Orang Tua</option>
-                                                                            <option value="Mertua">Mertua</option>
-                                                                            <option value="Famili">Famili</option>
-                                                                            <option value="Pembantu">Pembantu</option>
-                                                                            <option value="Lainnya">Lainnya</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Status</label>
-                                                                <div class="col-sm-9">
-                                                                    <div class="form-group">
-                                                                        <select class="status-` + fileId + ` form-control" name="status[]">
-                                                                            <option value="">Select</option>
-                                                                            <option value="Kawin">Kawin</option>
-                                                                            <option value="Belum Kawin">Belum Kawin</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <p class="text-center" style="margin-top:-15px;">
-                                                                    Pekerjaan
-                                                                </p>
-                                                                <div class="row">
-                                                                    <div class="col-sm-6">
-                                                                        <input type="text" class="form-control" placeholder="Pekerjaan Utama"
-                                                                            name="pekerjaanUtama[]">
-                        
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <input type="text" class="form-control" placeholder="Pekerjaan Sampingan"
-                                                                            name="pekerjaanSampingan[]">
-                        
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Pendidikan</label>
-                                                                <div class="col-sm-9">
-                                                                    <div class="form-group">
-                                                                        <select class="pendidikan-` + fileId + ` form-control" name="pendidikan[]">
-                                                                            <option value="">Select</option>
-                                                                            <option value="Tidak / Belum Sekolah">Tidak / Belum Sekolah</option>
-                                                                            <option value="Belum Tamat SD / Sederajat">Belum Tamat SD / Sederajat
-                                                                            </option>
-                                                                            <option value="Tamat SD / Sederajat">Tamat SD / Sederajat</option>
-                                                                            <option value="SLTP / Sederajat">SLTP / Sederajat</option>
-                                                                            <option value="SLTA / Sederajat">SLTA / Sederajat</option>
-                                                                            <option value="Diploma I">Diploma I / II</option>
-                                                                            <option value="Akademi / Diploma III / S. Muda">Akademi / Diploma III / S. Muda</option>
-                                                                            <option value="Diploma IV / Strata I">Diploma IV / Strata I</option>
-                                                                            <option value="Strata II">Strata II</option>
-                                                                            <option value="Strata III">Strata III</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Keterangan</label>
-                                                                <div class="col-sm-9">
-                                                                    <textarea name="keterangan[]" class="form-control" rows="2"></textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>`;
-                $(".dataKeluarga:last").after(formKeluarga);
-                $('.hubungan-' + fileId).select2({
-                    placeholder: "Hubungan Dalam Keluarga",
-                    allowClear: true
-                });
-                $('.status-' + fileId).select2({
-                    placeholder: "Status Perkawinan",
-                    allowClear: true
-                });
-                $('.pendidikan-' + fileId).select2({
-                    placeholder: "Pendidikan Terakhir",
-                    allowClear: true
-                });
-            })
-        });
-        $(document).ready(function() {
-            $("button#addPendapatanKeluarga").on("click", function() {
-                fileId++;
-                let formPenghaslan = `<div class="form-group row penghasilan" id="penghasilan-` + fileId +
-                    `">
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-sm" name="namaPenghasilan[]" placeholder="Nama Penghasilan Lain">
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group input-group-sm mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rp</span>
-                                        </div>
-                                        <input type="number" class="form-control" name="penghasillanBaru[]" placeholder="Rp/*hari/bulan">
-                                        <div class="input-group-prepend">
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="javascript:removeElement('penghasilan-` +
-                    fileId + `'); return false;">
-                                            <i class="fas fa-xs fa-trash"></i>
-                                        </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`;
-                $(".penghasilan:last").after(formPenghaslan);
-
-            });
-        });
-        $(document).ready(function() {
-            $("button#addPengeluaranKeluarga").on("click", function() {
-                fileId++;
-                let formPengeluaran = `<div class="form-group row pengeluaran" id="pengeluaran-` + fileId +
-                    `">
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-sm" name="namaPenghasilan[]" placeholder="Nama Pengeluaran Lain">
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group input-group-sm mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rp</span>
-                                        </div>
-                                        <input type="number" class="form-control" name="pengeluaranLain[]" placeholder="Rp/*hari/bulan">
-                                        <div class="input-group-prepend">
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="javascript:removeElement('pengeluaran-` +
-                    fileId + `'); return false;">
-                                            <i class="fas fa-xs fa-trash"></i>
-                                        </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`;
-                $(".pengeluaran:last").after(formPengeluaran);
-
-            });
-        });
-        $(document).ready(function() {
-            $('select[name="provinsi1"]').on('change', function() {
-                var id = $(this).val();
-                if (id) {
-                    $.ajax({
-                        url: 'kabupaten/' + id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="kabupaten1"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="kabupaten1"]').append(
-                                    '<option value="' + value.id + '">' + value
-                                    .nama + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('select[name="kabupaten1"]').empty();
-                }
-                breadcrumbSekarang();
-            });
-            $('select[name="kabupaten1"]').on('change', function() {
-                var id = $(this).val();
-                if (id) {
-                    $.ajax({
-                        url: 'kecamatan/' + id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="kecamatan1"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="kecamatan1"]').append(
-                                    '<option value="' + value.id + '">' + value
-                                    .nama + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('select[name="kecamatan1"]').empty();
-                }
-                breadcrumbSekarang();
-            });
-            $('select[name="kecamatan1"]').on('change', function() {
-                var id = $(this).val();
-                if (id) {
-                    $.ajax({
-                        url: 'desa/' + id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="desa1"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="desa1"]').append('<option value="' +
-                                    value.id + '">' + value.nama + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('select[name="desa1"]').empty();
-                }
-                breadcrumbSekarang();
-            });
-            $('select[name="desa1"]').on('change', function() {
-                breadcrumbSekarang();
-            });
-            $('select[name="provinsi2"]').on('change', function() {
-                var id = $(this).val();
-                if (id) {
-                    $.ajax({
-                        url: 'kabupaten/' + id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="kabupaten2"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="kabupaten2"]').append(
-                                    '<option value="' + value.id + '">' + value
-                                    .nama + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('select[name="kabupaten2"]').empty();
-                }
-                breadcrumbAsal()
-            });
-            $('select[name="kabupaten2"]').on('change', function() {
-                var id = $(this).val();
-                if (id) {
-                    $.ajax({
-                        url: 'kecamatan/' + id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="kecamatan2"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="kecamatan2"]').append(
-                                    '<option value="' + value.id + '">' + value
-                                    .nama + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('select[name="kecamatan2"]').empty();
-                }
-                breadcrumbAsal()
-            });
-            $('select[name="kecamatan2"]').on('change', function() {
-                var id = $(this).val();
-                if (id) {
-                    $.ajax({
-                        url: 'desa/' + id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function(data) {
-                            $('select[name="desa2"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="desa2"]').append('<option value="' +
-                                    value.id + '">' + value.nama + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('select[name="desa2"]').empty();
-                }
-                breadcrumbAsal()
-            });
-            $('select[name="desa2"]').on('change', function() {
-                breadcrumbAsal();
-            });
-        });
-        $(document).ready(function () {
-            $('#pendaftar').validate({
-              rules: {
-                nama: {
-                  required: true
-                },
-                alamatsekarang: {
-                  required: true,
-                }
-              },
-              messages: {},
-              errorClass: "invalid-tooltip",
-              errorElement: 'div',
-              validClass: "valid-tooltip",
-              highlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-valid').addClass('is-invalid');
-              },
-              unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid').addClass('is-valid');
-              },
-            });
-          });
-    </script>
+    <script src="{{ url('js/pendaftar.js') }}"></script>
 @endsection
