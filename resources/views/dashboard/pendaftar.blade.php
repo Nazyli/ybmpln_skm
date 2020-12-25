@@ -166,12 +166,12 @@
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="ukuranRumah2" name="ukuranRumah"
-                                            class="custom-control-input" value="Kecil (4 – 6 m<sup>2</sup>)">
+                                            class="custom-control-input" value="Kecil (4 - 6 m<sup>2</sup>)">
                                         <label class="custom-control-label" for="ukuranRumah2">Kecil (4 - 6 m<sup>2</sup>)</label>
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="ukuranRumah3" name="ukuranRumah"
-                                            class="custom-control-input" value="Sedang (6 – 8 m<sup>2</sup>)">
+                                            class="custom-control-input" value="Sedang (6 - 8 m<sup>2</sup>)">
                                         <label class="custom-control-label" for="ukuranRumah3">Sedang (6 - 8 m<sup>2</sup>)</label>
                                     </div>
                                     <div class="custom-control custom-radio">
@@ -461,7 +461,7 @@
                                     </div>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="simpanan2" name="simpanan" class="custom-control-input"
-                                            value="Tidak Ada">
+                                            value="0">
                                         <label class="custom-control-label" for="simpanan2">Tidak Ada</label>
                                     </div>
                                     <label for="simpanan" class="invalid-feedback"></label>
@@ -478,7 +478,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="jenisAset">Sebutkan jenisnya : </label>
-                            <textarea class="form-control" id="jenisAset" rows="3"></textarea>
+                            <textarea class="form-control" id="jenisAset" name="jenisAset" rows="3"></textarea>
                         </div>
                         <fieldset class="form-group">
                             <div class="row">

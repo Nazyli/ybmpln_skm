@@ -5,9 +5,9 @@ function removeElement(elementId) {
     element.parentNode.removeChild(element);
 }
 
-$('#simple-date1 .input-group.date')
+$('#tanggalinput')
     .datepicker({
-        format: 'dd/mm/yyyy',
+        format: 'yyyy-mm-dd',
         todayBtn: 'linked',
         todayHighlight: true,
         autoclose: true
@@ -248,9 +248,9 @@ $("button#addDataKeluarga").on("click", function () {
                                 <div class="card mb-4">
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga 1</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga ` + fileId + `</h6>
                                         <button type="button" class="btn btn-danger btn-sm"
-                                            onclick="javascript:removeElement('dataKeluarga-1');">
+                                            onclick="javascript:removeElement('dataKeluarga-` + fileId + `');">
                                             <i class="fas fa-xs fa-trash"></i>
                                         </button>
                                     </div>
@@ -437,7 +437,7 @@ $('#namaLembaga2').on('change', function () {
 
 
 // Validation Form
-$('#pendaftar').validate({
+$('#pendaftars').validate({
     onkeyup: function (element) { $(element).valid() },
     onclick: function (element) { $(element).valid() },
     rules: {
