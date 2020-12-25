@@ -421,6 +421,21 @@ $("button#addPengeluaranKeluarga").on("click", function () {
 });
 
 // Keterlibatan Dalam Program Lain
+$('input[name="isPinjam"]').on('change', function () {
+    if($('input[name="isPinjam"]:checked').val() == "Tidak"){
+        $('input[name="namaLembaga"]').prop( "checked", false );
+        $('input[name="besarPinjaman"]').val('')
+        $('input[name="caraPengembalian"]').prop( "checked", false );
+        $('input[name="lamaPinjam"]').val('')
+        $('input[name="pinjamPer"]').prop( "checked", false );
+        $('input[name="totalPinjam"]').val('')
+        $('input[name="isLunas"]').val('')
+        $('#formIsPinjam').slideUp();
+    }else{
+        $('#formIsPinjam').slideDown();
+    }
+});
+
 $('input[name="namaLembagaInput"]').on('change', function () {
     $("#namaLembaga3").prop("checked", true);
     $("#namaLembaga3").val($('input[name="namaLembagaInput"]').val());
@@ -437,7 +452,7 @@ $('#namaLembaga2').on('change', function () {
 
 
 // Validation Form
-$('#pendaftars').validate({
+$('#pendaftar').validate({
     onkeyup: function (element) { $(element).valid() },
     onclick: function (element) { $(element).valid() },
     rules: {
@@ -477,13 +492,13 @@ $('#pendaftars').validate({
         'namaPengeluaran[]': { required: true },
         'pengeluaranBaru[]': { required: true },
         isPinjam: { required: true },
-        namaLembaga: { required: true },
-        besarPinjaman: { required: true },
-        caraPengembalian: { required: true },
-        lamaPinjam: { required: true },
-        totalPinjam:{ required: true },
-        pinjamPer: { required: true },
-        isLunas: { required: true },
+        namaLembaga: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        besarPinjaman: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        caraPengembalian: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        lamaPinjam: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        totalPinjam:{ required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        pinjamPer: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        isLunas: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
         terlibatProgram: { required: true },
         pernahPengurus: { required: true },
         kebiasaanPatologis: { required: true },

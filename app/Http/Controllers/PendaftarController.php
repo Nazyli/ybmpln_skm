@@ -53,7 +53,7 @@ class PendaftarController extends Controller
             $userId = Auth::user()->id;
             $result = $this->tambahDataPendaftar($userId, $request);
             DB::commit();
-            return response()->json($result);
+            return response()->json($request->all());
             // return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
         } catch (Exception $e) {
             DB::rollback();
