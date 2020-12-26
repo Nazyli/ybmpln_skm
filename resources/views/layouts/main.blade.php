@@ -34,60 +34,60 @@
         <div class="sidebar-brand-text mx-3"><span style="color: #296174; font-size:bolder;">YBM</span> <span style="color: #00a2ba;">PLN</span></div>
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="{{ url('index.html') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Features
+        Formulir
       </div>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ url('#') }}" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
-          aria-controls="collapseForm">
+        <a class="nav-link" href="{{ url('#') }}">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Forms</span>
+          <span>Formulir - SKM</span>
         </a>
-        <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Forms</h6>
-            <a class="collapse-item" href="{{ url('form_basics.html') }}">Form Basics</a>
-            <a class="collapse-item" href="{{ url('form_advanceds.html') }}">Form Advanceds</a>
-          </div>
-        </div>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('ui-colors.html') }}">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>UI Colors</span>
+        <a class="nav-link" href="{{ url('#') }}">
+          <i class="fas fa-fw fa-tasks"></i>
+          <span>Survey</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('#') }}">
+          <i class="fas fa-fw fa-check-square"></i>
+          <span>Approved</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('#') }}">
+          <i class="fas fa-fw fa-ban"></i>
+          <span>Rejected</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('#') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Pendaftar Management</span>
         </a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
+        Master
       </div>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="{{ url('#') }}" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-          aria-controls="collapsePage">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Pages</span>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('#') }}">
+          <i class="fas fa-fw fa-map-signs"></i>
+          <span>Data Wilayah</span>
         </a>
-        <div id="collapsePage" class="collapse show" aria-labelledby="headingPage" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Example Pages</h6>
-            <a class="collapse-item" href="{{ url('login.html') }}">Login</a>
-            <a class="collapse-item" href="{{ url('register.html') }}">Register</a>
-            <a class="collapse-item" href="{{ url('404.html') }}">404 Page</a>
-            <a class="collapse-item active" href="{{ url('blank.html') }}">Blank Page</a>
-          </div>
-        </div>
+      </li>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('charts.html') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
+        <a class="nav-link" href="{{ url('#') }}">
+          <i class="fas fa-fw fa-users"></i>
+          <span>User Management</span>
         </a>
       </li>
       <hr class="sidebar-divider">

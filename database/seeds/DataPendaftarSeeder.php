@@ -44,6 +44,7 @@ class DataPendaftarSeeder extends Seeder
                     "alamat_sekarang" => $alamat_pendaftar,
                     "id_desa_asal" => $isAsal ? $id_desa : $faker->randomElement(collect($resultArray)->flatten()),
                     "alamat_asal" => $isAsal ? $alamat_pendaftar : $faker->address(),
+                    "km" => NULL,
                     "program" => "Studi Kelayakan Mitra (Program)",
                     "data_ke" => 0,
                     "tgl_input" => $date,
@@ -76,7 +77,7 @@ class DataPendaftarSeeder extends Seeder
                     "aset_pribadi_elektronik" => $faker->randomElement(["Radio", "Tape", "Televisi", "CD. Player", "Kulkas"]),
                     "aset_pribadi_kendaraan" => $faker->randomElement(["Tidak Ada", "Sepeda Kayuh", "Sepeda Motor", "Mobil"]),
                     "aset_pribadi_ternak" => $hewan,
-                    "aset_pribadi_simpanan" => $faker->randomElement(["Ada (Rp " . $faker->numberBetween(100000, 5000.000) . ")", "Tidak Ada"]),
+                    "aset_pribadi_simpanan" => $faker->randomElement([$faker->numberBetween(100000, 5000000), 0]),
                     "aset_produktif_jenis" => NULL,
                     "aset_produktif_penggunaan" => $faker->randomElement(["Bertambahnya aset produktif", "Investasi usaha lain", "Investasi usaha turunan"])
                 ]);
@@ -129,7 +130,7 @@ class DataPendaftarSeeder extends Seeder
                     }
 
                     // Pengeluaran Keluarga
-                    $pendapatan = array("Kebutuhan Dapur", "Pendidikan", "Kesehatan", "Transportasi", "Iuran Rutin (Listrik, Siskamling, PAM)", "Angsuran lainnya");
+                    $pengeluaran = array("Kebutuhan Dapur", "Pendidikan", "Kesehatan", "Transportasi", "Iuran Rutin (Listrik, Siskamling, PAM)", "Angsuran lainnya");
                     foreach ($pendapatan as $value) {
                         PengeluaranKeluarga::insert([
                             "pendaftar_id" => $id,

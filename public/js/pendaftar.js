@@ -5,9 +5,9 @@ function removeElement(elementId) {
     element.parentNode.removeChild(element);
 }
 
-$('#simple-date1 .input-group.date')
+$('#tanggalinput')
     .datepicker({
-        format: 'dd/mm/yyyy',
+        format: 'yyyy-mm-dd',
         todayBtn: 'linked',
         todayHighlight: true,
         autoclose: true
@@ -248,9 +248,9 @@ $("button#addDataKeluarga").on("click", function () {
                                 <div class="card mb-4">
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga 1</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Data Keluarga ` + fileId + `</h6>
                                         <button type="button" class="btn btn-danger btn-sm"
-                                            onclick="javascript:removeElement('dataKeluarga-1');">
+                                            onclick="javascript:removeElement('dataKeluarga-` + fileId + `');">
                                             <i class="fas fa-xs fa-trash"></i>
                                         </button>
                                     </div>
@@ -421,6 +421,21 @@ $("button#addPengeluaranKeluarga").on("click", function () {
 });
 
 // Keterlibatan Dalam Program Lain
+$('input[name="isPinjam"]').on('change', function () {
+    if($('input[name="isPinjam"]:checked').val() == "Tidak"){
+        $('input[name="namaLembaga"]').prop( "checked", false );
+        $('input[name="besarPinjaman"]').val('')
+        $('input[name="caraPengembalian"]').prop( "checked", false );
+        $('input[name="lamaPinjam"]').val('')
+        $('input[name="pinjamPer"]').prop( "checked", false );
+        $('input[name="totalPinjam"]').val('')
+        $('input[name="isLunas"]').val('')
+        $('#formIsPinjam').slideUp();
+    }else{
+        $('#formIsPinjam').slideDown();
+    }
+});
+
 $('input[name="namaLembagaInput"]').on('change', function () {
     $("#namaLembaga3").prop("checked", true);
     $("#namaLembaga3").val($('input[name="namaLembagaInput"]').val());
@@ -477,13 +492,13 @@ $('#pendaftar').validate({
         'namaPengeluaran[]': { required: true },
         'pengeluaranBaru[]': { required: true },
         isPinjam: { required: true },
-        namaLembaga: { required: true },
-        besarPinjaman: { required: true },
-        caraPengembalian: { required: true },
-        lamaPinjam: { required: true },
-        totalPinjam:{ required: true },
-        pinjamPer: { required: true },
-        isLunas: { required: true },
+        namaLembaga: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        besarPinjaman: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        caraPengembalian: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        lamaPinjam: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        totalPinjam:{ required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        pinjamPer: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
+        isLunas: { required: function(){ return $('input[name="isPinjam"]:checked').val() == "Ya";} },
         terlibatProgram: { required: true },
         pernahPengurus: { required: true },
         kebiasaanPatologis: { required: true },
