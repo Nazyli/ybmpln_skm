@@ -15,11 +15,32 @@
   <link href="{{ url('vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" >
   <link href="{{ url('vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css') }}" rel="stylesheet" >
   <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
+  <link href="{{ url('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+
   @yield('css')
   <style>
     a:hover{
       text-decoration: none;
     }
+@media (max-width: 767.98px) {
+  div#datatable_paginate{
+    margin: 0 auto;
+  }
+  li.paginate_button.previous, li.paginate_button.next {
+    display: inline-block;
+    font-size: 14px; }
+  li.paginate_button {
+    display: none; }
+  .dataTables_paginate ul {
+    display: block;
+    margin: 14px 10% 0 !important;
+  }
+  div.dt-buttons {
+    display: inline-table;
+    margin-bottom: 14px; }
+}
+
+
   </style>
 </head>
 
@@ -212,6 +233,10 @@
   <script src="{{ url('vendor/jquery-validation/jquery.validate.min.js') }}"></script>
   <script src="{{ url('vendor/jquery-validation/additional-methods.min.js') }}"></script>
   <script src="{{ url('vendor/jquery-validation/localization/messages_id.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/responsive.bootstrap4.min.js') }}"></script>
   @yield('js')
 
 

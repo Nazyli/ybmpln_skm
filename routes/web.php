@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index');
     Route::resource('/pendaftar', 'PendaftarController');
     Route::get('/pendaftar', 'PendaftarController@provinsi');
+    Route::resource('/wilayah', 'WilayahController');
 });
 Route::get('/kabupaten/{id}', 'ProvinsiController@kabupaten');
 Route::get('/kecamatan/{id}', 'ProvinsiController@kecamatan');
