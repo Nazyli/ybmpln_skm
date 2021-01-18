@@ -223,6 +223,7 @@ function isActiveLink($text) {
   <script src="{{ url('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ url('vendor/datatables/dataTables.responsive.min.js') }}"></script>
   <script src="{{ url('vendor/datatables/responsive.bootstrap4.min.js') }}"></script>
+  <script src="{{ url('js/script.js') }}"></script>
   @yield('js')
 
 
