@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Desa;
+use App\Kabupaten;
+use App\Kecamatan;
 use App\Provinsi;
 use Illuminate\Http\Request;
 
@@ -84,5 +87,26 @@ class WilayahController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function provinsi()
+    {
+        $prov = Provinsi::all();
+        return json_encode($prov);
+    }
+
+    public function kabupaten($id)
+    {
+        $kab = Kabupaten::where('id_provinsi', $id)->get();
+        return json_encode($kab);
+    }
+    public function kecamatan($id)
+    {
+        $kec = Kecamatan::where('id_kabupaten', $id)->get();
+        return json_encode($kec);
+    }
+    public function desa($id)
+    {
+        $desa = Desa::where('id_kecamatan', $id)->get();
+        return json_encode($desa);
     }
 }

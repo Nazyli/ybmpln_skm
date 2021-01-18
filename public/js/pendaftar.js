@@ -134,6 +134,10 @@ function breadcrumbAsal() {
         )
     }
 }
+$(function() {
+    getAPIOLAll('provinsi','select[name="provinsi1"]');
+    getAPIOLAll('provinsi','select[name="provinsi2"]');
+});
 $('select[name="provinsi2"]').on('change', function () {
     var id = $(this).val()
     getAPIOl(id, 'kabupaten', 'select[name="kabupaten2"]');
@@ -165,7 +169,20 @@ $('#dataAsal').on('click', function () {
         x.innerHTML = 'Hapus Data'
     }
 });
-
+function getAPIOLAll(url, element){
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            $(element).empty()
+            $(element).append('<option value="">Select</option>')
+            $.each(data, function (key, value) {
+                $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
+            })
+        }
+    })
+}
 
 // function call api
 function getAPIOl(id, url, element) {

@@ -53,7 +53,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="media-title"><a href="#">{{ $value->nama_kelas }}</a></div>
                         </div></th>
                       </tr>
                       @endforeach

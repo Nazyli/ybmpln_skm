@@ -1,0 +1,37 @@
+a:hover {
+    text-decoration: none;
+}
+
+.navbar-nav .active .nav-link {
+    color: #6777EF !important;
+}
+
+.navbar-nav .active i {
+    color: #6777EF !important;
+}
+
+@media (max-width: 767.98px) {
+    div#datatable_paginate {
+        margin: 0 auto;
+    }
+
+    li.paginate_button.previous,
+    li.paginate_button.next {
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    li.paginate_button {
+        display: none;
+    }
+
+    .dataTables_paginate ul {
+        display: block;
+        margin: 14px 10% 0 !important;
+    }
+
+    div.dt-buttons {
+        display: inline-table;
+        margin-bottom: 14px;
+    }
+}

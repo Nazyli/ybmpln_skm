@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/pendaftar', 'PendaftarController@provinsi');
     Route::resource('/wilayah', 'WilayahController');
 });
-Route::get('/kabupaten/{id}', 'ProvinsiController@kabupaten');
-Route::get('/kecamatan/{id}', 'ProvinsiController@kecamatan');
-Route::get('/desa/{id}', 'ProvinsiController@desa');
+Route::get('/provinsi', 'WilayahController@provinsi');
+Route::get('/kabupaten/{id}', 'WilayahController@kabupaten');
+Route::get('/kecamatan/{id}', 'WilayahController@kecamatan');
+Route::get('/desa/{id}', 'WilayahController@desa');
