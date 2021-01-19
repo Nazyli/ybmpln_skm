@@ -116,6 +116,23 @@ class PendaftarController extends Controller
         ->orderBy('created_at', 'desc')->get();
         return view('dashboard.survey', compact('survey'));
     }
+    public static function totalSurvey()
+    {
+        $total = Pendaftar::where("rekomendasi",null)
+                ->count();
+        return $total;
+
+    }
+    public function pendaftarManagement()
+    {
+        $survey = Pendaftar::select('pendaftar.*', 
+        DB::raw("(SELECT sum(pendapatan_keluarga.jumlah) FROM pendapatan_keluarga WHERE pendapatan_keluarga.pendaftar_id = pendaftar.id) as total_pendapatan"),
+        DB::raw("(SELECT sum(pengeluaran_keluarga.jumlah) FROM pengeluaran_keluarga WHERE pengeluaran_keluarga.pendaftar_id = pendaftar.id) as total_pengeluaran"),
+        DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
+        )
+        ->orderBy('created_at', 'desc')->get();
+        return view('dashboard.pendaftarManagement', compact('survey'));
+    }
 
     public function tambahDataPendaftar($userId, Request $request)
     {

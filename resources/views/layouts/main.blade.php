@@ -1,4 +1,6 @@
 @php
+use App\Http\Controllers\PendaftarController;
+
 function isActiveLink($text) {
   if(\Request::is($text) or \Request::is($text.'/*')) {
     return "active";
@@ -66,8 +68,10 @@ function isActiveLink($text) {
       </li>
       <li class="nav-item {{ isActiveLink('survey') }}">
         <a class="nav-link" href="{{ url('/survey') }}">
-          <i class="fas fa-fw fa-tasks"></i>
-          <span>Survey</span>
+          <i class="fas fa-fw fa-tasks d-inline"></i>
+          <span>
+            Survey <small class="badge badge-info text-xs float-right mt-1">{{ PendaftarController::totalSurvey()}}</small>
+          </span>
         </a>
       </li>
       <li class="nav-item">
@@ -82,8 +86,8 @@ function isActiveLink($text) {
           <span>Rejected</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('#') }}">
+      <li class="nav-item {{ isActiveLink('pendaftars') }}">
+        <a class="nav-link" href="{{ url('/pendaftars') }}">
           <i class="fas fa-fw fa-table"></i>
           <span>Pendaftar Management</span>
         </a>
