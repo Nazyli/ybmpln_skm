@@ -28,6 +28,14 @@ function isActiveLink($text) {
   <link href="{{ url('css/style.css') }}" rel="stylesheet">
 
   @yield('css')
+  <style>
+    .btn-group-xs > .btn, .btn-xs {
+      padding: .25rem .4rem;
+      font-size: .875rem;
+      line-height: .5;
+      border-radius: .2rem;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -56,8 +64,8 @@ function isActiveLink($text) {
           <span>Formulir - SKM</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('#') }}">
+      <li class="nav-item {{ isActiveLink('survey') }}">
+        <a class="nav-link" href="{{ url('/survey') }}">
           <i class="fas fa-fw fa-tasks"></i>
           <span>Survey</span>
         </a>
