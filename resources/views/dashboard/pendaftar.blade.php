@@ -42,10 +42,6 @@
                             <div class="form-group row">
                                 <div class="col-sm-3 mb-1">
                                     <select class="provinsi form-control fontSelect" style="width: 100%;" name="provinsi1">
-                                        <option value="">Select</option>
-                                        @foreach ($provinsi as $value)
-                                            <option value="{{ $value->id }}">{{ $value->nama }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-sm-3 mb-1">
@@ -84,10 +80,6 @@
                             <div class="form-group row">
                                 <div class="col-sm-3 mb-1">
                                     <select class="provinsi form-control fontSelect" style="width: 100%;" name="provinsi2">
-                                        <option value="">Select</option>
-                                        @foreach ($provinsi as $value)
-                                            <option value="{{ $value->id }}">{{ $value->nama }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-sm-3 mb-1">

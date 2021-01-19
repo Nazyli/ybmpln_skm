@@ -1,3 +1,12 @@
+@php
+function isActiveLink($text) {
+  if(\Request::is($text) or \Request::is($text.'/*')) {
+    return "active";
+  }else {
+    return null;
+  }
+}   
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +24,10 @@
   <link href="{{ url('vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" >
   <link href="{{ url('vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css') }}" rel="stylesheet" >
   <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
+  <link href="{{ url('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+  <link href="{{ url('css/style.css') }}" rel="stylesheet">
+
   @yield('css')
-  <style>
-    a:hover{
-      text-decoration: none;
-    }
-  </style>
 </head>
 
 <body id="page-top">
@@ -34,8 +41,8 @@
         <div class="sidebar-brand-text mx-3"><span style="color: #296174; font-size:bolder;">YBM</span> <span style="color: #00a2ba;">PLN</span></div>
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ url('index.html') }}">
+      <li class="nav-item {{ isActiveLink('home') }}">
+        <a class="nav-link" href="{{ url('/home') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -43,8 +50,8 @@
       <div class="sidebar-heading">
         Formulir
       </div>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('#') }}">
+      <li class="nav-item {{ isActiveLink('pendaftar') }}">
+        <a class="nav-link" href="{{url('/pendaftar')}}">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Formulir - SKM</span>
         </a>
@@ -77,8 +84,8 @@
       <div class="sidebar-heading">
         Master
       </div>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('#') }}">
+      <li class="nav-item {{ isActiveLink('wilayah') }}">
+        <a class="nav-link" href="{{ url('/wilayah') }}">
           <i class="fas fa-fw fa-map-signs"></i>
           <span>Data Wilayah</span>
         </a>
@@ -212,6 +219,12 @@
   <script src="{{ url('vendor/jquery-validation/jquery.validate.min.js') }}"></script>
   <script src="{{ url('vendor/jquery-validation/additional-methods.min.js') }}"></script>
   <script src="{{ url('vendor/jquery-validation/localization/messages_id.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/responsive.bootstrap4.min.js') }}"></script>
+  <script src="{{ url('vendor/datatables/dataTables.scroller.min.js') }}"></script>
+  <script src="{{ url('js/script.js') }}"></script>
   @yield('js')
 
 
