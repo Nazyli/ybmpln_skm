@@ -9,7 +9,6 @@ use App\PendaftarKeluarga;
 use App\PendapatanKeluarga;
 use App\PengeluaranKeluarga;
 use App\ProgramLain;
-use App\Provinsi;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,9 +68,9 @@ class PendaftarController extends Controller
      */
     public function show(Pendaftar $pendaftar)
     {
-        //
         $data = Pendaftar::findOrFail($pendaftar->id);
-        return view('dashboard.pendaftar.detail', compact('data'));
+        $detail = \App\PendaftarDetail::where('pendaftar_id','=',$data->id)->firstOrFail();
+        return view('dashboard.pendaftar.detail', compact('data'), compact('detail'));
     }
 
     /**

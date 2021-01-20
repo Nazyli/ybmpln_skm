@@ -1,6 +1,3 @@
-@php
-$detail = \App\PendaftarDetail::where('pendaftar_id','=',$data->id)->first();
-@endphp
 @extends('layouts.main')
 @section('title', 'SKM - ' . $data->nama . '')
 @section('breadcrumb', 'Home,List Survey;survey, SKM - ' . $data->nama . '')
@@ -97,7 +94,7 @@ $detail = \App\PendaftarDetail::where('pendaftar_id','=',$data->id)->first();
             </div>
         </div>
 
-        {{--  <div class="col-md-6">
+        <div class="col-md-6">
             <div class="card card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Kepemilikan Aset Pribadi</h6>
@@ -142,12 +139,12 @@ $detail = \App\PendaftarDetail::where('pendaftar_id','=',$data->id)->first();
                     </div>
                 </div>
             </div>
-        </div>  --}}
+        </div>
 
     </div>
 @endsection
 @section('js')
-    {{--  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         $(function() {
             var output = document.getElementById('output');
@@ -175,6 +172,6 @@ $detail = \App\PendaftarDetail::where('pendaftar_id','=',$data->id)->first();
             }
         });
 
-    </script>  --}}
+    </script>
 
 @endsection
