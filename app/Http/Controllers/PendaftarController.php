@@ -25,7 +25,7 @@ class PendaftarController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pendaftar');
+        return view('dashboard.pendaftar.pendaftar');
     }
 
     /**
@@ -70,6 +70,8 @@ class PendaftarController extends Controller
     public function show(Pendaftar $pendaftar)
     {
         //
+        $data = Pendaftar::findOrFail($pendaftar->id);
+        return view('dashboard.pendaftar.detail', compact('data'));
     }
 
     /**
@@ -114,7 +116,7 @@ class PendaftarController extends Controller
         DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
         )->where("rekomendasi",null)
         ->orderBy('created_at', 'desc')->get();
-        return view('dashboard.survey', compact('survey'));
+        return view('dashboard.pendaftar.survey', compact('survey'));
     }
     public static function totalSurvey()
     {
@@ -131,7 +133,7 @@ class PendaftarController extends Controller
         DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
         )
         ->orderBy('created_at', 'desc')->get();
-        return view('dashboard.pendaftarManagement', compact('survey'));
+        return view('dashboard.pendaftar.pendaftarManagement', compact('survey'));
     }
 
     public function tambahDataPendaftar($userId, Request $request)

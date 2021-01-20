@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Suvery')
-@section('breadcrumb', 'Home,List Survey')
+@section('breadcrumb', 'Home,List Survey;survey')
 
 @section('isi')
 
@@ -32,37 +32,18 @@
                                         <th>Keluarga</th>
                                         <th>Pendapatan</th>
                                         <th>Pengeluaran</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($survey as $key => $value)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td class="text-primary">{{ $value->nama }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($value->tgl_input)->isoFormat('d MMM Y hh:mm')}}</td>
+                                            <td><a href="{{ route('pendaftar.show',$value->id) }}" class="">
+                                                {{ $value->nama }}</a></td>
+                                            <td>{{ \Carbon\Carbon::parse($value->tgl_input)->isoFormat('DD MMM Y hh:mm')}}</td>
                                             <td>{{ $value->total_keluarga }}</td>
                                             <td class="align-items-center">{{ $value->total_pendapatan }}</td>
                                             <td>{{ $value->total_pengeluaran }}</td>
-                                            <th>
-                                              <div class="d-flex justify-content-around">
-                                                <a href="#" class="btn btn-outline-info btn-xs infoProv"><i
-                                                        class="fas fa-info-circle fa-xs"></i></a>
-                                                <div class="btn-group">
-                                                    <form action="{{ route('wilayah.destroy', $value->id) }}" method="POST"
-                                                        class="form-delete">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button href="{{ route('wilayah.edit', $value->id) }}"
-                                                            class="btn btn-outline-primary btn-xs"><i
-                                                                class="fas fa-pencil-alt fa-xs"></i></button>
-                                                    </form>
-                                                </div>
-                                                <a href="{{ route('wilayah.edit', $value->id) }}"
-                                                    class="btn btn-outline-danger btn-xs"><i
-                                                        class="fas fa-trash fa-xs"></i></a>
-                                                </div>
-                                            </th>
                                         </tr>
                                     @endforeach
                                 </tbody>

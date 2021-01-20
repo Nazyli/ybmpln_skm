@@ -29,3 +29,4 @@ Route::get('/provinsi', 'WilayahController@provinsi');
 Route::get('/kabupaten/{id}', 'WilayahController@kabupaten');
 Route::get('/kecamatan/{id}', 'WilayahController@kecamatan');
 Route::get('/desa/{id}', 'WilayahController@desa');
+Route::get('/desaId/{id}', 'WilayahController@desaById');

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Pendaftar Management')
-@section('breadcrumb', 'Home,List Survey')
+@section('breadcrumb', 'Home,Pendaftar Management;pendaftars')
 
 @section('isi')
 
@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td class="text-primary">{{ $value->nama }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($value->tgl_input)->isoFormat('d MMM Y hh:mm')}}</td>
+                                            <td>{{ \Carbon\Carbon::parse($value->tgl_input)->isoFormat('DD MMM Y hh:mm')}}</td>
                                             <td>{{ $value->total_keluarga }}</td>
                                             <td class="align-items-center">{{ $value->total_pendapatan }}</td>
                                             <td>{{ $value->total_pengeluaran }}</td>

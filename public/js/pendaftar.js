@@ -197,7 +197,8 @@ function getAPIOl(id, url, element) {
                 $.each(data, function (key, value) {
                     $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
                 })
-            }
+            },
+            error: err => console.log(err),
         })
     } else {
         $(element).empty()
