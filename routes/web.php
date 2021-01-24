@@ -21,6 +21,7 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index');
     Route::resource('/pendaftar', 'PendaftarController');
+    Route::post('/pendaftar/approved/{id}', 'PendaftarController@approved');
     Route::get('/survey', 'PendaftarController@survey');
     Route::get('/pendaftars', 'PendaftarController@pendaftarManagement');
     Route::resource('/wilayah', 'WilayahController');

@@ -92,7 +92,7 @@ class DataPendaftarSeeder extends Seeder
                     "pekerjaan_utama" => $faker->randomElement(['PNS', 'Swasta', 'Wiraswata', 'Petani', 'Buruh', 'Lain-Lain']),
                     "pekerjaan_sampingan" => $faker->randomElement(["Admin Olshop", "Jasa Laundry", "Menjual Kue", "Freelance", NULL]),
                     "pendidikan" => $faker->randomElement(['SD/MI', 'SMP/MTs', 'SMA/SMK', "Diploma", 'Sarjana', 'Magister', "Doketer"]),
-                    "keteterangan" => $faker->text
+                    "keterangan" => $faker->text
                 ]);
                 PendaftarKeluarga::insert([
                     "pendaftar_id" => $id,
@@ -103,7 +103,7 @@ class DataPendaftarSeeder extends Seeder
                     "pekerjaan_utama" => $faker->randomElement(['PNS', 'Swasta', 'Wiraswata', 'Petani', 'Buruh', 'Lain-Lain']),
                     "pekerjaan_sampingan" => $faker->randomElement(["Admin Olshop", "Jasa Laundry", "Menjual Kue", "Freelance", NULL]),
                     "pendidikan" => $faker->randomElement(['SD/MI', 'SMP/MTs', 'SMA/SMK', "Diploma", 'Sarjana', 'Magister', "Doketer"]),
-                    "keteterangan" => $faker->text
+                    "keterangan" => $faker->text
                 ]);
 
                 for ($j = 0; $j < $faker->numberBetween(0, 3); $j++) {
@@ -116,7 +116,7 @@ class DataPendaftarSeeder extends Seeder
                         "pekerjaan_utama" => $faker->randomElement([NULL, $faker->randomElement(['PNS', 'Swasta', 'Wiraswata', 'Petani', 'Buruh', 'Lain-Lain'])]),
                         "pekerjaan_sampingan" => $faker->randomElement([NULL, $faker->randomElement(["Admin Olshop", "Jasa Laundry", "Menjual Kue", "Freelance"])]),
                         "pendidikan" => $faker->randomElement(['SD/MI', 'SMP/MTs', 'SMA/SMK', "Diploma", 'Sarjana', 'Magister', "Doketer"]),
-                        "keteterangan" => $faker->text
+                        "keterangan" => $faker->text
                     ]);
                     }
                     // Pendapatan Keluarga

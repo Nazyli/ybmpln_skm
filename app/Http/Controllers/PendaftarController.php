@@ -9,6 +9,7 @@ use App\PendaftarKeluarga;
 use App\PendapatanKeluarga;
 use App\PengeluaranKeluarga;
 use App\ProgramLain;
+use App\RekapitulasiKelayakan;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,11 +53,53 @@ class PendaftarController extends Controller
             $userId = Auth::user()->id;
             $result = $this->tambahDataPendaftar($userId, $request);
             DB::commit();
-            return response()->json($request->all());
-            // return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
+            // return response()->json($request->all());
+            return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
         } catch (Exception $e) {
             DB::rollback();
-            return response()->json($e);
+            return redirect('/pendaftar/'.$id)->with('error', $e->errorInfo[2]);
+        }
+    }
+
+    public function approved(Request $request, $id)
+    {
+        // DB::transaction(function () use ($request) {
+        // });
+        DB::beginTransaction();
+        try {
+            $userId = Auth::user();
+            $pendaftar = Pendaftar::find($id);
+            $pendaftar->rekomendasi = $request->rekomendasi;
+            $pendaftar->tgl_cek = now();
+            $pendaftar->surveyor = $userId->name;
+            $pendaftar->surveyor_id = $userId->id;
+            $pendaftar->updated_by = $userId->id;
+            $pendaftar->save();
+
+            $list = array();
+            $listrkp = array("Indeks Rumah", "Kepemilikan Harta", "Pendapatan");
+            $listValue = array($request->indeksRumah, $request->indeksHarta, $request->indeksPendapatan);
+            $listKet = array($request->ketIndeksRumah, $request->ketIndeksharta, $request->ketIndeksPendapatan);
+            foreach ($listrkp as $key => $value) {
+                $rkp = new RekapitulasiKelayakan();
+                $rkp->pendaftar_id = $pendaftar->id;
+                $rkp->parameter = $value;
+                $rkp->kelayakan = $listValue[$key];
+                $rkp->keterangans = $listKet[$key];
+                $rkp->created_by = $userId->id;
+                $rkp->updated_by = $userId->id;
+                $rkp->save();
+                $list[] = $rkp;
+            }
+
+            DB::commit();
+            // return response()->json($list);
+            $rekom = $request->rekomendasi == "1" ? "Approved" : "Rejected";
+            $pesan = "Data berhasil di ".$rekom;
+            return redirect('/pendaftar/'.$id)->with('sukses', $pesan );
+        } catch (Exception $e) {
+            DB::rollback();
+            return redirect('/pendaftar/'.$id)->with('error', $e->errorInfo[2]);
         }
     }
 
@@ -69,8 +112,19 @@ class PendaftarController extends Controller
     public function show(Pendaftar $pendaftar)
     {
         $data = Pendaftar::findOrFail($pendaftar->id);
-        $detail = \App\PendaftarDetail::where('pendaftar_id','=',$data->id)->firstOrFail();
-        return view('dashboard.pendaftar.detail', compact('data'), compact('detail'));
+        $detail = PendaftarDetail::where('pendaftar_id','=',$data->id)->firstOrFail();
+        $keluarga = PendaftarKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        $pendapatan = PendapatanKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        $pengeluaran = PengeluaranKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        $program = ProgramLain::where('pendaftar_id','=',$data->id)->first();
+        $indikator = IndikatorKeimanan::where('pendaftar_id','=',$data->id)->first();
+        return view('dashboard.pendaftar.detail')->with(compact('data'))
+        ->with(compact('detail'))
+        ->with(compact('keluarga'))
+        ->with(compact('pendapatan'))
+        ->with(compact('pengeluaran'))
+        ->with(compact('program'))
+        ->with(compact('indikator'));
     }
 
     /**
@@ -186,7 +240,7 @@ class PendaftarController extends Controller
             $pendaftarKeluarga->pekerjaan_utama = $request->pekerjaanUtama[$key];
             $pendaftarKeluarga->pekerjaan_sampingan = $request->pekerjaanSampingan[$key];
             $pendaftarKeluarga->pendidikan = $request->pendidikan[$key];
-            $pendaftarKeluarga->keteterangan = $request->keteranganKeluarga[$key];
+            $pendaftarKeluarga->keterangan = $request->keteranganKeluarga[$key];
             $pendaftarKeluarga->created_by = $userId;
             $pendaftarKeluarga->updated_by = $userId;
             $pendaftarKeluarga->save();
