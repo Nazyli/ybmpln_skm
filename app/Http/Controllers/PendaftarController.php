@@ -57,7 +57,7 @@ class PendaftarController extends Controller
             return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
         } catch (Exception $e) {
             DB::rollback();
-            return redirect('/pendaftar/'.$id)->with('error', $e->errorInfo[2]);
+            return redirect('/pendaftar')->with('error', $e->errorInfo[2]);
         }
     }
 
