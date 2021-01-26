@@ -42,6 +42,7 @@ $breadcrumbSplit = explode(",",$breadcrumb);
     <link href="{{ url('vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css') }}" rel="stylesheet">
     <link href="{{ url('css/ruang-admin.min.css') }}" rel="stylesheet">
     <link href="{{ url('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('vendor/izitoast/css/iziToast.min.css') }}">
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
 
     @yield('css')
@@ -52,6 +53,9 @@ $breadcrumbSplit = explode(",",$breadcrumb);
             font-size: .875rem;
             line-height: .5;
             border-radius: .2rem;
+        }
+        .text-navy{
+            color:#001f3f!important;
         }
 
     </style>
@@ -259,10 +263,28 @@ $breadcrumbSplit = explode(",",$breadcrumb);
     <script src="{{ url('vendor/datatables/dataTables.responsive.min.js') }}"></script>
     <script src="{{ url('vendor/datatables/responsive.bootstrap4.min.js') }}"></script>
     <script src="{{ url('vendor/datatables/dataTables.scroller.min.js') }}"></script>
+    <script src="{{ url('vendor/izitoast/js/iziToast.min.js') }}"></script>
     <script src="{{ url('js/script.js') }}"></script>
+    <script>
+    @if(session('sukses'))
+        iziToast.success({
+            icon: 'far fa-check-circle',
+            title: 'Sukses',
+            message: "{{ session('sukses') }}",
+            position: 'bottomRight'
+        });
+    @endif
+    @if(session('error'))
+        iziToast.error({
+            icon: 'fa fa-exclamation-circle',
+            title: 'Gagal',
+            message: "{{ session('error') }}",
+            position: 'bottomRight'
+        });
+    @endif
+    </script>
     @yield('js')
-
-
+    
 </body>
 
 </html>
