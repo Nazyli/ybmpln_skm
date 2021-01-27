@@ -118,13 +118,15 @@ class PendaftarController extends Controller
         $pengeluaran = PengeluaranKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
         $program = ProgramLain::where('pendaftar_id','=',$data->id)->first();
         $indikator = IndikatorKeimanan::where('pendaftar_id','=',$data->id)->first();
+        $rkp = RekapitulasiKelayakan::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
         return view('dashboard.pendaftar.detail')->with(compact('data'))
         ->with(compact('detail'))
         ->with(compact('keluarga'))
         ->with(compact('pendapatan'))
         ->with(compact('pengeluaran'))
         ->with(compact('program'))
-        ->with(compact('indikator'));
+        ->with(compact('indikator'))
+        ->with(compact('rkp'));
     }
 
     /**

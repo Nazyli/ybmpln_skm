@@ -2,6 +2,18 @@
 use Illuminate\Support\Facades\Auth;
 $totalPendapatan = 0;
 $totalPengeluaran = 0;
+$pesan = '';
+$color = '';
+if (is_null($data->rekomendasi)) {
+    $pesan = 'Data perlu di survey untuk Studi Kelayakan Mitra / SKM';
+    $color = 'bg-info';
+} elseif ($data->rekomendasi == 1) {
+    $pesan = 'Direkomendasikan oleh ' . $data->surveyor;
+    $color = 'bg-success';
+} elseif ($data->rekomendasi == 0) {
+    $pesan = 'Tidak direkomendasikan oleh ' . $data->surveyor;
+    $color = 'bg-danger';
+}
 @endphp
 @extends('layouts.main')
 @section('title', 'SKM - ' . $data->nama . '')
@@ -10,11 +22,11 @@ $totalPengeluaran = 0;
 @section('isi')
     <div class="row">
         <div class="col-lg-12">
-            <div class="card bg-info text-white mb-4">
+            <div class="card text-white mb-4 {{ $color }} ">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            Data perlu di survey untuk Studi Kelayakan Mitra / SKM
+                            {{ $pesan }}
                         </div>
                         <div class="col-md-6 text-right">
                             Ditambahkan pada :
@@ -421,6 +433,7 @@ $totalPengeluaran = 0;
                                 </tr>
                             </thead>
                             <tbody>
+                                @if(is_null($data->rekomendasi))
                                 <tr>
                                     <td class="align-middle">1</td>
                                     <td class="align-middle">Indeks Rumah</td>
@@ -506,24 +519,41 @@ $totalPengeluaran = 0;
                                     <td><input type="text" class="form-control form-control" style="margin-top:-5px;"
                                             name="ketIndeksPendapatan"></td>
                                 </tr>
+                                @else
+                                @foreach ($rkp as $key => $value)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $value->parameter }}</td>
+                                        <td>{{ $value->rekomendasi==1 ? "Layak" : "Tidak"}}</td>
+                                        <td>{{ $value->keterangan }}</td>
+                                    </tr>
+                                @endforeach
+                                @endif
                             </tbody>
                             <tfoot class="text-navy text-center">
                                 <tr>
                                     <th colspan="2">Rekomendasi</th>
                                     <th colspan="2">
-                                        Data ini akan dinilai oleh {{Auth::user()->name}} pada tanggal {{ \Carbon\Carbon::now()->isoFormat('DD MMMM Y') }}
+                                        @if(is_null($data->rekomendasi))
+                                        Data ini akan dinilai oleh {{ Auth::user()->name }} pada tanggal
+                                        {{ \Carbon\Carbon::now()->isoFormat('DD MMMM Y') }}
+                                        @else
+                                        {{ $data->rekomendasi==1 ? "Ya" : "Tidak"}}
+                                        @endif
                                     </th>
                                 </tr>
                             </tfoot>
-                            
+
                         </table>
                     </div>
                     <div class="card-footer text-muted bg-blue">
+                        @if(is_null($data->rekomendasi))
                         <div class="float-right">
                             <button type="submit" class="btn btn-danger px-5 py-2" value="0"
                                 name="rekomendasi">Rejected</button>
                             <button class="btn btn-success px-5 py-2" value="1" name="rekomendasi">Approved</button>
                         </div>
+                        @endif
                     </div>
                 </div>
             </form>
@@ -543,17 +573,18 @@ $totalPengeluaran = 0;
                     axios.get(`{{ url('desaId/` + id + `') }}`)
                         .then(function(res) {
                             let html = `
-                                                                            <label class="col-md-4 font-weight-bold text-navy">Provinsi</label>
-                                                                            <label class="col-md-8">` + res.data.provinsi + `</label>
-                                                                            <label class="col-md-4 font-weight-bold text-navy">Kabupaten</label>
-                                                                            <label class="col-md-8">` + res.data
+                                                                                <label class="col-md-4 font-weight-bold text-navy">Provinsi</label>
+                                                                                <label class="col-md-8">` + res.data
+                                .provinsi + `</label>
+                                                                                <label class="col-md-4 font-weight-bold text-navy">Kabupaten</label>
+                                                                                <label class="col-md-8">` + res.data
                                 .kabupaten + `</label>
-                                                                            <label class="col-md-4 font-weight-bold text-navy">Kecamatan</label>
-                                                                            <label class="col-md-8">` + res.data
+                                                                                <label class="col-md-4 font-weight-bold text-navy">Kecamatan</label>
+                                                                                <label class="col-md-8">` + res.data
                                 .kecamatan + `</label>
-                                                                            <label class="col-md-4 font-weight-bold text-navy">Desa</label>
-                                                                            <label class="col-md-8">` + res.data.desa + `</label>
-                                                                            `
+                                                                                <label class="col-md-4 font-weight-bold text-navy">Desa</label>
+                                                                                <label class="col-md-8">` + res.data.desa + `</label>
+                                                                                `
                             $(element).before(html);
                         })
                         .catch(function(error) {
