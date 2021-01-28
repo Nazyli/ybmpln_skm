@@ -40,7 +40,8 @@
                                     @foreach ($survey as $key => $value)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td class="text-primary">{{ $value->nama }}</td>
+                                            <td class="text-primary"><a href="{{ route('pendaftar.show',$value->id) }}" class="">
+                                                {{ $value->nama }}</a></td>
                                             <td>{{ \Carbon\Carbon::parse($value->tgl_input)->isoFormat('DD MMM Y hh:mm')}}</td>
                                             <td>{{ $value->total_keluarga }}</td>
                                             <td class="align-items-center">{{ $value->total_pendapatan }}</td>
