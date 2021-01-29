@@ -61,7 +61,7 @@ class PendaftarController extends Controller
         }
     }
 
-    public function approved(Request $request, $id)
+    public function rekom(Request $request, $id)
     {
         // DB::transaction(function () use ($request) {
         // });
@@ -172,6 +172,16 @@ class PendaftarController extends Controller
         )->where("rekomendasi",null)
         ->orderBy('created_at', 'desc')->get();
         return view('dashboard.pendaftar.survey', compact('survey'));
+    }
+    public function approved()
+    {
+        $approved = Pendaftar::select('pendaftar.*', 
+        DB::raw("(SELECT sum(pendapatan_keluarga.jumlah) FROM pendapatan_keluarga WHERE pendapatan_keluarga.pendaftar_id = pendaftar.id) as total_pendapatan"),
+        DB::raw("(SELECT sum(pengeluaran_keluarga.jumlah) FROM pengeluaran_keluarga WHERE pengeluaran_keluarga.pendaftar_id = pendaftar.id) as total_pengeluaran"),
+        DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
+        )->where("rekomendasi",1)
+        ->orderBy('created_at', 'desc')->get();
+        return view('dashboard.pendaftar.approved', compact('approved'));
     }
     public static function totalSurvey()
     {
