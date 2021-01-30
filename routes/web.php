@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/pendaftar/rekom/{id}', 'PendaftarController@rekom');
     Route::get('/survey', 'PendaftarController@survey');
     Route::get('/approved', 'PendaftarController@approved');
+    Route::get('/rejected', 'PendaftarController@rejected');
     Route::get('/pendaftars', 'PendaftarController@pendaftarManagement');
     Route::resource('/wilayah', 'WilayahController');
 });

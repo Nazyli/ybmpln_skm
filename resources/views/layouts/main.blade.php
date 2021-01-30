@@ -104,8 +104,8 @@ $breadcrumbSplit = explode(",",$breadcrumb);
                     <span>Approved</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('#') }}">
+            <li class="nav-item {{ isActiveLink('rejected') }}">
+                <a class="nav-link" href="{{ url('/rejected') }}">
                     <i class="fas fa-fw fa-ban"></i>
                     <span>Rejected</span>
                 </a>
