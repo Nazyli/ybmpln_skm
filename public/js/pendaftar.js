@@ -4,7 +4,10 @@ function removeElement(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
 }
-
+$('input[name="nama"]').on('change', function () {
+    let nama = $('input[name="nama"]').val();
+    $('#namaKeluarga').val(nama);
+});
 $('#tanggalinput')
     .datepicker({
         format: 'yyyy-mm-dd',

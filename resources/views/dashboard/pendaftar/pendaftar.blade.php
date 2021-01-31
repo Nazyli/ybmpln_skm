@@ -563,7 +563,7 @@
                                             <label class="col-sm-3 col-form-label">Nama</label>
                                             <div class="col-sm-9">
                                                 <input type="text" name="namaKeluarga[]" class="form-control"
-                                                    id="namaKeluarga" placeholder="Nama Keluarga">
+                                                    id="namaKeluarga" placeholder="Nama Keluarga" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group row">
