@@ -193,10 +193,20 @@ class PendaftarController extends Controller
         ->orderBy('created_at', 'desc')->get();
         return view('dashboard.pendaftar.rejected', compact('rejected'));
     }
-    public static function totalSurvey()
+    public static function totalPendaftar($status)
     {
-        $total = Pendaftar::where("rekomendasi",null)
-                ->count();
+        if($status =="survey"){
+            $total = Pendaftar::where("rekomendasi",null)
+            ->count();
+        }else if($status == "approved"){
+            $total = Pendaftar::where("rekomendasi",1)
+            ->count();
+        }else if ($status == "rejected"){
+            $total = Pendaftar::where("rekomendasi",0)
+            ->count();
+        }else{
+            $total = Pendaftar::get()->count();
+        }
         return $total;
 
     }

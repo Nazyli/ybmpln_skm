@@ -94,20 +94,22 @@ $breadcrumbSplit = explode(",",$breadcrumb);
                     <i class="fas fa-fw fa-tasks d-inline"></i>
                     <span>
                         Survey <small
-                            class="badge badge-info text-xs float-right mt-1">{{ PendaftarController::totalSurvey() }}</small>
+                            class="badge badge-info text-xs float-right mt-1">{{ PendaftarController::totalPendaftar("survey") }}</small>
                     </span>
                 </a>
             </li>
             <li class="nav-item {{ isActiveLink('approved') }}">
                 <a class="nav-link" href="{{ url('/approved') }}">
                     <i class="fas fa-fw fa-check-square"></i>
-                    <span>Approved</span>
+                    <span>Approved <small
+                        class="badge badge-success text-xs float-right mt-1">{{ PendaftarController::totalPendaftar("approved") }}</small></span>
                 </a>
             </li>
             <li class="nav-item {{ isActiveLink('rejected') }}">
                 <a class="nav-link" href="{{ url('/rejected') }}">
                     <i class="fas fa-fw fa-ban"></i>
-                    <span>Rejected</span>
+                    <span>Rejected <small
+                        class="badge badge-danger text-xs float-right mt-1">{{ PendaftarController::totalPendaftar("rejected") }}</small></span>
                 </a>
             </li>
             <li class="nav-item {{ isActiveLink('pendaftars') }}">
