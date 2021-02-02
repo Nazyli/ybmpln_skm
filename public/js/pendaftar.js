@@ -4,7 +4,10 @@ function removeElement(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
 }
-
+$('input[name="nama"]').on('change', function () {
+    let nama = $('input[name="nama"]').val();
+    $('#namaKeluarga').val(nama);
+});
 $('#tanggalinput')
     .datepicker({
         format: 'yyyy-mm-dd',
@@ -197,7 +200,8 @@ function getAPIOl(id, url, element) {
                 $.each(data, function (key, value) {
                     $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
                 })
-            }
+            },
+            error: err => console.log(err),
         })
     } else {
         $(element).empty()

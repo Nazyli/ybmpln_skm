@@ -1,10 +1,8 @@
 $(function() {
     var oTable = $('.datatable').dataTable({
-        "bJQueryUI": true,
         "sPaginationType": "full_numbers",
-
+        
         //  "sDom": '<"clear">lfrtip' ,
-
         "oLanguage": {
             "sEmptyTable": "Tidak ada data yang tersedia pada tabel ini",
             "sProcessing": "Sedang memproses...",

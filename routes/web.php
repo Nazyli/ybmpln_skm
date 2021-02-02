@@ -21,10 +21,15 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index');
     Route::resource('/pendaftar', 'PendaftarController');
-    Route::get('/pendaftar', 'PendaftarController@provinsi');
+    Route::post('/pendaftar/rekom/{id}', 'PendaftarController@rekom');
+    Route::get('/survey', 'PendaftarController@survey');
+    Route::get('/approved', 'PendaftarController@approved');
+    Route::get('/rejected', 'PendaftarController@rejected');
+    Route::get('/pendaftars', 'PendaftarController@pendaftarManagement');
     Route::resource('/wilayah', 'WilayahController');
 });
 Route::get('/provinsi', 'WilayahController@provinsi');
 Route::get('/kabupaten/{id}', 'WilayahController@kabupaten');
 Route::get('/kecamatan/{id}', 'WilayahController@kecamatan');
 Route::get('/desa/{id}', 'WilayahController@desa');
+Route::get('/desaId/{id}', 'WilayahController@desaById');

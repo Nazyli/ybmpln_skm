@@ -6,6 +6,8 @@ use App\Desa;
 use App\Kabupaten;
 use App\Kecamatan;
 use App\Provinsi;
+use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +23,6 @@ class WilayahController extends Controller
         //
         $provinsi = Provinsi::all();
         return view('dashboard.wilayah', compact('provinsi'));
-
     }
 
     /**
@@ -92,47 +93,61 @@ class WilayahController extends Controller
     public function provinsi()
     {
         $prov = DB::table('provinsi')
-        ->join('kabupaten', 'provinsi.id', '=', 'kabupaten.id_provinsi')
-        ->join('kecamatan', 'kabupaten.id', '=', 'kecamatan.id_kabupaten')
-        ->join('desa', 'kecamatan.id', '=', 'desa.id_kecamatan')
-        ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
-        ->select('provinsi.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
-        ->groupBy('provinsi.id')
-        ->get();
+            ->join('kabupaten', 'provinsi.id', '=', 'kabupaten.id_provinsi')
+            ->join('kecamatan', 'kabupaten.id', '=', 'kecamatan.id_kabupaten')
+            ->join('desa', 'kecamatan.id', '=', 'desa.id_kecamatan')
+            ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
+            ->select('provinsi.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
+            ->groupBy('provinsi.id')
+            ->get();
         return json_encode($prov);
     }
 
     public function kabupaten($id)
     {
         $kab = DB::table('kabupaten')
-        ->join('kecamatan', 'kabupaten.id', '=', 'kecamatan.id_kabupaten')
-        ->join('desa', 'kecamatan.id', '=', 'desa.id_kecamatan')
-        ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
-        ->select('kabupaten.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
-        ->where('kabupaten.id_provinsi', '=', $id)
-        ->groupBy('kabupaten.id')
-        ->get();
+            ->join('kecamatan', 'kabupaten.id', '=', 'kecamatan.id_kabupaten')
+            ->join('desa', 'kecamatan.id', '=', 'desa.id_kecamatan')
+            ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
+            ->select('kabupaten.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
+            ->where('kabupaten.id_provinsi', '=', $id)
+            ->groupBy('kabupaten.id')
+            ->get();
         return json_encode($kab);
     }
     public function kecamatan($id)
     {
         $kec = DB::table('kecamatan')
-        ->join('desa', 'kecamatan.id', '=', 'desa.id_kecamatan')
-        ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
-        ->select('kecamatan.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
-        ->where('kecamatan.id_kabupaten', '=', $id)
-        ->groupBy('kecamatan.id')
-        ->get();
+            ->join('desa', 'kecamatan.id', '=', 'desa.id_kecamatan')
+            ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
+            ->select('kecamatan.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
+            ->where('kecamatan.id_kabupaten', '=', $id)
+            ->groupBy('kecamatan.id')
+            ->get();
         return json_encode($kec);
     }
     public function desa($id)
     {
         $desa = DB::table('desa')
-        ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
-        ->select('desa.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
-        ->where('desa.id_kecamatan', '=', $id)
-        ->groupBy('desa.id')
-        ->get();
+            ->leftJoin('pendaftar', 'desa.id', '=', 'pendaftar.id_desa_sekarang')
+            ->select('desa.*', DB::raw('count(pendaftar.id_desa_sekarang) as total'))
+            ->where('desa.id_kecamatan', '=', $id)
+            ->groupBy('desa.id')
+            ->get();
         return json_encode($desa);
+    }
+    public function desaById($id)
+    {
+        $desa = DB::table('desa')
+            ->join('kecamatan', 'kecamatan.id', '=', 'desa.id_kecamatan')
+            ->join('kabupaten', 'kabupaten.id', '=', 'kecamatan.id_kabupaten')
+            ->join('provinsi', 'provinsi.id', '=', 'kabupaten.id_provinsi')
+            ->select('desa.id', 'desa.nama as desa', 'id_kecamatan', 'kecamatan.nama  as kecamatan', 'id_kabupaten', 'kabupaten.nama as kabupaten', 'id_provinsi', 'provinsi.nama as provinsi')
+            ->where('desa.id', '=', $id)
+            ->first();
+        if (!$desa) {
+            abort(404);
+        }
+        return response()->json($desa);
     }
 }

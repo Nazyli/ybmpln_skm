@@ -9,7 +9,7 @@ use App\PendaftarKeluarga;
 use App\PendapatanKeluarga;
 use App\PengeluaranKeluarga;
 use App\ProgramLain;
-use App\Provinsi;
+use App\RekapitulasiKelayakan;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +25,7 @@ class PendaftarController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pendaftar');
+        return view('dashboard.pendaftar.pendaftar');
     }
 
     /**
@@ -53,11 +53,53 @@ class PendaftarController extends Controller
             $userId = Auth::user()->id;
             $result = $this->tambahDataPendaftar($userId, $request);
             DB::commit();
-            return response()->json($request->all());
-            // return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
+            // return response()->json($request->all());
+            return redirect('/pendaftar')->with('sukses', 'Data berhasil di tambahkan');
         } catch (Exception $e) {
             DB::rollback();
-            return response()->json($e);
+            return redirect('/pendaftar')->with('error', $e->errorInfo[2]);
+        }
+    }
+
+    public function rekom(Request $request, $id)
+    {
+        // DB::transaction(function () use ($request) {
+        // });
+        DB::beginTransaction();
+        try {
+            $userId = Auth::user();
+            $pendaftar = Pendaftar::find($id);
+            $pendaftar->rekomendasi = $request->rekomendasi;
+            $pendaftar->tgl_cek = now();
+            $pendaftar->surveyor = $userId->name;
+            $pendaftar->surveyor_id = $userId->id;
+            $pendaftar->updated_by = $userId->id;
+            $pendaftar->save();
+
+            $list = array();
+            $listrkp = array("Indeks Rumah", "Kepemilikan Harta", "Pendapatan");
+            $listValue = array($request->indeksRumah, $request->indeksHarta, $request->indeksPendapatan);
+            $listKet = array($request->ketIndeksRumah, $request->ketIndeksharta, $request->ketIndeksPendapatan);
+            foreach ($listrkp as $key => $value) {
+                $rkp = new RekapitulasiKelayakan();
+                $rkp->pendaftar_id = $pendaftar->id;
+                $rkp->parameter = $value;
+                $rkp->kelayakan = $listValue[$key];
+                $rkp->keterangans = $listKet[$key];
+                $rkp->created_by = $userId->id;
+                $rkp->updated_by = $userId->id;
+                $rkp->save();
+                $list[] = $rkp;
+            }
+
+            DB::commit();
+            // return response()->json($list);
+            $rekom = $request->rekomendasi == "1" ? "Approved" : "Rejected";
+            $pesan = "Data berhasil di ".$rekom;
+            return redirect('/pendaftar/'.$id)->with('sukses', $pesan );
+        } catch (Exception $e) {
+            DB::rollback();
+            return redirect('/pendaftar/'.$id)->with('error', $e->errorInfo[2]);
         }
     }
 
@@ -69,7 +111,22 @@ class PendaftarController extends Controller
      */
     public function show(Pendaftar $pendaftar)
     {
-        //
+        $data = Pendaftar::findOrFail($pendaftar->id);
+        $detail = PendaftarDetail::where('pendaftar_id','=',$data->id)->firstOrFail();
+        $keluarga = PendaftarKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        $pendapatan = PendapatanKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        $pengeluaran = PengeluaranKeluarga::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        $program = ProgramLain::where('pendaftar_id','=',$data->id)->first();
+        $indikator = IndikatorKeimanan::where('pendaftar_id','=',$data->id)->first();
+        $rkp = RekapitulasiKelayakan::where('pendaftar_id','=',$data->id)->orderBy('id', 'asc')->get();
+        return view('dashboard.pendaftar.detail')->with(compact('data'))
+        ->with(compact('detail'))
+        ->with(compact('keluarga'))
+        ->with(compact('pendapatan'))
+        ->with(compact('pengeluaran'))
+        ->with(compact('program'))
+        ->with(compact('indikator'))
+        ->with(compact('rkp'));
     }
 
     /**
@@ -106,10 +163,62 @@ class PendaftarController extends Controller
         //
     }
 
-    public function provinsi()
+    public function survey()
     {
-        $provinsi = Provinsi::all();
-        return view('dashboard.pendaftar', compact('provinsi'));
+        $survey = Pendaftar::select('pendaftar.*', 
+        DB::raw("(SELECT sum(pendapatan_keluarga.jumlah) FROM pendapatan_keluarga WHERE pendapatan_keluarga.pendaftar_id = pendaftar.id) as total_pendapatan"),
+        DB::raw("(SELECT sum(pengeluaran_keluarga.jumlah) FROM pengeluaran_keluarga WHERE pengeluaran_keluarga.pendaftar_id = pendaftar.id) as total_pengeluaran"),
+        DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
+        )->where("rekomendasi",null)
+        ->orderBy('created_at', 'desc')->get();
+        return view('dashboard.pendaftar.survey', compact('survey'));
+    }
+    public function approved()
+    {
+        $approved = Pendaftar::select('pendaftar.*', 
+        DB::raw("(SELECT sum(pendapatan_keluarga.jumlah) FROM pendapatan_keluarga WHERE pendapatan_keluarga.pendaftar_id = pendaftar.id) as total_pendapatan"),
+        DB::raw("(SELECT sum(pengeluaran_keluarga.jumlah) FROM pengeluaran_keluarga WHERE pengeluaran_keluarga.pendaftar_id = pendaftar.id) as total_pengeluaran"),
+        DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
+        )->where("rekomendasi",1)
+        ->orderBy('created_at', 'desc')->get();
+        return view('dashboard.pendaftar.approved', compact('approved'));
+    }
+    public function rejected()
+    {
+        $rejected = Pendaftar::select('pendaftar.*', 
+        DB::raw("(SELECT sum(pendapatan_keluarga.jumlah) FROM pendapatan_keluarga WHERE pendapatan_keluarga.pendaftar_id = pendaftar.id) as total_pendapatan"),
+        DB::raw("(SELECT sum(pengeluaran_keluarga.jumlah) FROM pengeluaran_keluarga WHERE pengeluaran_keluarga.pendaftar_id = pendaftar.id) as total_pengeluaran"),
+        DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
+        )->where("rekomendasi",0)
+        ->orderBy('created_at', 'desc')->get();
+        return view('dashboard.pendaftar.rejected', compact('rejected'));
+    }
+    public static function totalPendaftar($status)
+    {
+        if($status =="survey"){
+            $total = Pendaftar::where("rekomendasi",null)
+            ->count();
+        }else if($status == "approved"){
+            $total = Pendaftar::where("rekomendasi",1)
+            ->count();
+        }else if ($status == "rejected"){
+            $total = Pendaftar::where("rekomendasi",0)
+            ->count();
+        }else{
+            $total = Pendaftar::get()->count();
+        }
+        return $total;
+
+    }
+    public function pendaftarManagement()
+    {
+        $survey = Pendaftar::select('pendaftar.*', 
+        DB::raw("(SELECT sum(pendapatan_keluarga.jumlah) FROM pendapatan_keluarga WHERE pendapatan_keluarga.pendaftar_id = pendaftar.id) as total_pendapatan"),
+        DB::raw("(SELECT sum(pengeluaran_keluarga.jumlah) FROM pengeluaran_keluarga WHERE pengeluaran_keluarga.pendaftar_id = pendaftar.id) as total_pengeluaran"),
+        DB::raw("(SELECT COUNT(pendaftar_keluarga.id) FROM pendaftar_keluarga WHERE pendaftar_keluarga.pendaftar_id = pendaftar.id) as total_keluarga")
+        )
+        ->orderBy('created_at', 'desc')->get();
+        return view('dashboard.pendaftar.pendaftarManagement', compact('survey'));
     }
 
     public function tambahDataPendaftar($userId, Request $request)
@@ -163,7 +272,7 @@ class PendaftarController extends Controller
             $pendaftarKeluarga->pekerjaan_utama = $request->pekerjaanUtama[$key];
             $pendaftarKeluarga->pekerjaan_sampingan = $request->pekerjaanSampingan[$key];
             $pendaftarKeluarga->pendidikan = $request->pendidikan[$key];
-            $pendaftarKeluarga->keteterangan = $request->keteranganKeluarga[$key];
+            $pendaftarKeluarga->keterangan = $request->keteranganKeluarga[$key];
             $pendaftarKeluarga->created_by = $userId;
             $pendaftarKeluarga->updated_by = $userId;
             $pendaftarKeluarga->save();
