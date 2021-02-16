@@ -128,13 +128,20 @@ $breadcrumbSplit = explode(",",$breadcrumb);
                     <span>Data Wilayah</span>
                 </a>
             </li>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('#') }}">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>User Management</span>
+            <li class="nav-item {{ isActiveLink('usermanagement') }}">
+                <a class="nav-link collapsed" href="{{ url('#') }}" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true"
+                  aria-controls="collapseUser">
+                  <i class="fas fa-fw fa-users"></i>
+                  <span>User Management</span>
                 </a>
-            </li>
+                <div id="collapseUser" class="collapse @if(isActiveLink('usermanagement') == 'active') show @endif" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">User Management</h6>
+                    <a class="collapse-item" href="{{ url('/usermanagement/create') }}">Add User</a>
+                    <a class="collapse-item" href="{{ url('/usermanagement') }}">Data User</a>
+                  </div>
+                </div>
+              </li>
             <hr class="sidebar-divider">
             <div class="version" id="version-ruangadmin"></div>
         </ul>

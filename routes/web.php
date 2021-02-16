@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/rejected', 'PendaftarController@rejected');
     Route::get('/pendaftars', 'PendaftarController@pendaftarManagement');
     Route::resource('/wilayah', 'WilayahController');
+    Route::resource('/usermanagement', 'UserManagement');
 });
 Route::get('/provinsi', 'WilayahController@provinsi');
 Route::get('/kabupaten/{id}', 'WilayahController@kabupaten');
