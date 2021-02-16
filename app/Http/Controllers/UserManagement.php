@@ -16,6 +16,8 @@ class UserManagement extends Controller
     public function index()
     {
         //
+        $user = User::get();
+        return view('dashboard.user.index', compact('user'));
     }
 
     /**
