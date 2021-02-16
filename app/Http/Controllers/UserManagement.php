@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserManagement extends Controller
@@ -51,15 +52,18 @@ class UserManagement extends Controller
             'password.confirmed' => 'Password Tidak sama',
             'password.min' => 'Password harus lebih 8 karakter',
         ]);
+        $userId = Auth::user()->id;
         $data = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
+            'last_seen' => now(),
+            'created_by' => $userId,
+            'updated_by' => $userId,
 
         ]);
         return redirect('/usermanagement/create')->with('sukses', 'Data berhasil di tambahkan');
-
     }
 
     /**

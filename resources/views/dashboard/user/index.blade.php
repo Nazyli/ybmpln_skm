@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Suvery')
+@section('title', 'User Management')
 @section('breadcrumb', 'Home,User;usermanagement')
 
 @section('isi')
@@ -9,8 +9,7 @@
         <div class="col-lg-12">
             <div class="card card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">List Data Survey - <span
-                            class="badge badge-info">Processing</span></h6>
+                    <h6 class="m-0 font-weight-bold text-primary">List Data User</h6>
                     <div class="btn-group">
                         <a href="#" class="btn btn-primary btn-sm" data-trigger="hover" data-toggle="popover"
                             data-content="Cetak Laporan PDF" data-placement="top"><i class="far fa-file-pdf"
