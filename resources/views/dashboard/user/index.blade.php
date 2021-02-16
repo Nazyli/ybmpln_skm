@@ -31,6 +31,8 @@
                                     <th>Nama</th>
                                     <th>Tanggal Input </th>
                                     <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Seen</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +51,14 @@
                                                 <span class="badge badge-danger">{{ $value->role }}</span>
                                             @endif
                                         </td>
+                                        <td>
+                                            @if (Cache::has('user-is-online-' . $value->id))
+                                                <span class="text-success">Online</span>
+                                            @else
+                                                <span class="text-secondary">Offline</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ \Carbon\Carbon::parse($value->last_seen)->diffForHumans() }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
