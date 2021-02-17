@@ -1200,4 +1200,44 @@
 
 @section('js')
     <script src="{{ url('js/pendaftar.js') }}"></script>
+    <script>
+        function getAPIOLAll(url, element){
+            var link = '{{ url(":url") }}';
+            link = link.replace(':url',url);
+            $.ajax({
+                url: link,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $(element).empty()
+                    $(element).append('<option value="">Select</option>')
+                    $.each(data, function (key, value) {
+                        $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
+                    })
+                }
+            })
+        }
+        function getAPIOl(id, url, element) {
+            var link = '{{ url(":url") }}';
+            link = link.replace(':url',url);
+            if (id) {
+                $.ajax({
+                    url: link + '/' + id,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $(element).empty()
+                        $(element).append('<option value="">Select</option>')
+                        $.each(data, function (key, value) {
+                            $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
+                        })
+                    },
+                    error: err => console.log(err),
+                })
+            } else {
+                $(element).empty()
+                $(element).append('<option value="">Select</option>')
+            }
+        }
+    </script>
 @endsection

@@ -172,43 +172,6 @@ $('#dataAsal').on('click', function () {
         x.innerHTML = 'Hapus Data'
     }
 });
-function getAPIOLAll(url, element){
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            $(element).empty()
-            $(element).append('<option value="">Select</option>')
-            $.each(data, function (key, value) {
-                $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
-            })
-        }
-    })
-}
-
-// function call api
-function getAPIOl(id, url, element) {
-    if (id) {
-        $.ajax({
-            url: url + '/' + id,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                $(element).empty()
-                $(element).append('<option value="">Select</option>')
-                $.each(data, function (key, value) {
-                    $(element).append('<option value="' + value.id + '">' + value.nama + '</option>')
-                })
-            },
-            error: err => console.log(err),
-        })
-    } else {
-        $(element).empty()
-        $(element).append('<option value="">Select</option>')
-    }
-}
-
 
 
 // Form Kepemilikan Aset Pribadi
