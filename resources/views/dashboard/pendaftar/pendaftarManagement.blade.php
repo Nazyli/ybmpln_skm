@@ -59,19 +59,20 @@
                                               <div class="d-flex justify-content-around">
                                                 <a href="#" class="btn btn-outline-info btn-xs infoProv"><i
                                                         class="fas fa-info-circle fa-xs"></i></a>
+                                                        <a href="{{ route('pendaftar.edit', $value->id) }}"
+                                                            class="btn btn-outline-primary btn-xs"><i
+                                                                class="fas fa-pencil-alt fa-xs"></i></a>
                                                 <div class="btn-group">
-                                                    <form action="{{ route('wilayah.destroy', $value->id) }}" method="POST"
+                                                    <form action="{{ route('pendaftar.destroy', $value->id) }}" method="POST"
                                                         class="form-delete">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button href="{{ route('wilayah.edit', $value->id) }}"
-                                                            class="btn btn-outline-primary btn-xs"><i
-                                                                class="fas fa-pencil-alt fa-xs"></i></button>
+                                                        <button href="{{ route('pendaftar.edit', $value->id) }}"
+                                                            class="btn btn-outline-danger btn-xs"><i
+                                                                class="fas fa-trash fa-xs"></i></button>
                                                     </form>
                                                 </div>
-                                                <a href="{{ route('wilayah.edit', $value->id) }}"
-                                                    class="btn btn-outline-danger btn-xs"><i
-                                                        class="fas fa-trash fa-xs"></i></a>
+                                                
                                                 </div>
                                             </th>
                                         </tr>
